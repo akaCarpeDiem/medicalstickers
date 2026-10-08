@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img">
+  <title>Sample sticker artwork: Support Your Local Skeleton</title>
+  <desc>Placeholder artwork for MedicalStickers.shop. Replace this file with a photo of the printed sticker.</desc>
+  <g fill="#FFFFFF"><circle cx="200" cy="200" r="176"/></g>
+  <g fill="#1C1917" transform="translate(200 200) scale(0.9) translate(-200 -200)"><circle cx="200" cy="200" r="176"/></g>
+  <g transform="translate(200 104) scale(0.58) translate(-50 -50)"><ellipse cx="50" cy="42" rx="28" ry="30" fill="#FFFCF8" stroke="#F6F3EE" stroke-width="3"/><ellipse cx="38" cy="40" rx="8" ry="9" fill="#1C1917"/><ellipse cx="62" cy="40" rx="8" ry="9" fill="#1C1917"/><path d="M50 48v12" stroke="#F6F3EE" stroke-width="3" stroke-linecap="round"/><path d="M34 78h32" stroke="#F6F3EE" stroke-width="3"/><path d="M36 72h6M47 72h6M58 72h6" stroke="#F6F3EE" stroke-width="3" stroke-linecap="round"/><path d="M30 70c2 14 38 14 40 0" fill="#FFFCF8" stroke="#F6F3EE" stroke-width="3"/></g>
+  <text x="200" y="149.0" text-anchor="middle" fill="#F6F3EE" font-family="Georgia, 'Liberation Serif', 'Noto Serif', 'Times New Roman', serif" font-weight="700" font-size="22"><tspan x="200" dy="0">SUPPORT YOUR</tspan><tspan x="200" dy="24.6">LOCAL</tspan><tspan x="200" dy="24.6">SKELETON</tspan></text>
+</svg>

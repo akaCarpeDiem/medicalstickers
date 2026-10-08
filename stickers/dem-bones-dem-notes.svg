@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img">
+  <title>Sample sticker artwork: Dem Bones, Dem Notes</title>
+  <desc>Placeholder artwork for MedicalStickers.shop. Replace this file with a photo of the printed sticker.</desc>
+  <g fill="#FFFFFF"><rect x="28" y="28" width="344" height="344" rx="86"/></g>
+  <g fill="#F4EFE6" transform="translate(200 200) scale(0.9) translate(-200 -200)"><rect x="28" y="28" width="344" height="344" rx="86"/></g>
+  <g transform="translate(200 112) scale(0.7) translate(-50 -50)"><g fill="#1C1917"><circle cx="24" cy="38" r="12"/><circle cx="24" cy="62" r="12"/><circle cx="76" cy="38" r="12"/><circle cx="76" cy="62" r="12"/><rect x="24" y="42" width="52" height="16" rx="8"/></g></g>
+  <text x="200" y="170.0" text-anchor="middle" fill="#1C1917" font-family="Georgia, 'Liberation Serif', 'Noto Serif', 'Times New Roman', serif" font-weight="700" font-size="32"><tspan x="200" dy="0">DEM BONES,</tspan><tspan x="200" dy="35.8">DEM NOTES</tspan></text>
+</svg>

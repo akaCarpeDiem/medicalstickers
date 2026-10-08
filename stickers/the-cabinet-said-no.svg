@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img">
+  <title>Sample sticker artwork: The Cabinet Said No</title>
+  <desc>Placeholder artwork for MedicalStickers.shop. Replace this file with a photo of the printed sticker.</desc>
+  <g fill="#FFFFFF"><circle cx="200" cy="200" r="176"/></g>
+  <g fill="#F4EFE6" transform="translate(200 200) scale(0.9) translate(-200 -200)"><circle cx="200" cy="200" r="176"/></g>
+  <g transform="translate(200 112) scale(0.7) translate(-50 -50)"><g transform="rotate(-28 50 50)"><rect x="16" y="36" width="68" height="28" rx="14" fill="#1C1917"/><path d="M50 36h20a14 14 0 0 1 0 28H50z" fill="#8E2B2A"/></g></g>
+  <text x="200" y="167.9" text-anchor="middle" fill="#1C1917" font-family="Georgia, 'Liberation Serif', 'Noto Serif', 'Times New Roman', serif" font-weight="700" font-size="29"><tspan x="200" dy="0">THE CABINET</tspan><tspan x="200" dy="32.5">SAID NO</tspan></text>
+</svg>

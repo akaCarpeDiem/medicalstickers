@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img">
+  <title>Sample sticker artwork: Sterile Field, Feral Mind</title>
+  <desc>Placeholder artwork for MedicalStickers.shop. Replace this file with a photo of the printed sticker.</desc>
+  <g fill="#FFFFFF"><path d="M 200.0 42.0 Q 233.9 29.3 260.5 54.0 Q 296.7 55.3 311.7 88.3 Q 344.7 103.3 346.0 139.5 Q 370.7 166.1 358.0 200.0 Q 370.7 233.9 346.0 260.5 Q 344.7 296.7 311.7 311.7 Q 296.7 344.7 260.5 346.0 Q 233.9 370.7 200.0 358.0 Q 166.1 370.7 139.5 346.0 Q 103.3 344.7 88.3 311.7 Q 55.3 296.7 54.0 260.5 Q 29.3 233.9 42.0 200.0 Q 29.3 166.1 54.0 139.5 Q 55.3 103.3 88.3 88.3 Q 103.3 55.3 139.5 54.0 Q 166.1 29.3 200.0 42.0 Z"/></g>
+  <g fill="#F4EFE6" transform="translate(200 200) scale(0.9) translate(-200 -200)"><path d="M 200.0 42.0 Q 233.9 29.3 260.5 54.0 Q 296.7 55.3 311.7 88.3 Q 344.7 103.3 346.0 139.5 Q 370.7 166.1 358.0 200.0 Q 370.7 233.9 346.0 260.5 Q 344.7 296.7 311.7 311.7 Q 296.7 344.7 260.5 346.0 Q 233.9 370.7 200.0 358.0 Q 166.1 370.7 139.5 346.0 Q 103.3 344.7 88.3 311.7 Q 55.3 296.7 54.0 260.5 Q 29.3 233.9 42.0 200.0 Q 29.3 166.1 54.0 139.5 Q 55.3 103.3 88.3 88.3 Q 103.3 55.3 139.5 54.0 Q 166.1 29.3 200.0 42.0 Z"/></g>
+  <g transform="translate(200 112) scale(0.7) translate(-50 -50)"><path d="M16 44c22-18 46-18 68 0 4 16 0 28-12 36-16 10-28 10-44 0C16 72 12 60 16 44z" fill="#8E2B2A"/><path d="M30 50h40M34 60h32" stroke="#FFFCF8" stroke-width="3" stroke-linecap="round"/></g>
+  <text x="200" y="163.0" text-anchor="middle" fill="#1C1917" font-family="Georgia, 'Liberation Serif', 'Noto Serif', 'Times New Roman', serif" font-weight="700" font-size="21"><tspan x="200" dy="0">STERILE FIELD,</tspan><tspan x="200" dy="23.5">FERAL MIND</tspan></text>
+</svg>

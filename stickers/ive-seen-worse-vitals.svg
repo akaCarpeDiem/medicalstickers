@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img">
+  <title>Sample sticker artwork: I’ve Seen Worse Vitals</title>
+  <desc>Placeholder artwork for MedicalStickers.shop. Replace this file with a photo of the printed sticker.</desc>
+  <g fill="#FFFFFF"><rect x="46" y="58" width="308" height="284" rx="36"/></g>
+  <g fill="#8E2B2A" transform="translate(200 200) scale(0.9) translate(-200 -200)"><rect x="46" y="58" width="308" height="284" rx="36"/></g>
+  <g transform="translate(200 104) scale(0.58) translate(-50 -50)"><rect x="18" y="16" width="64" height="70" rx="6" fill="#FFFCF8" stroke="#FBF7F2" stroke-width="3"/><rect x="30" y="54" width="10" height="20" rx="1" fill="#F3E6C8"/><rect x="45" y="42" width="10" height="32" rx="1" fill="#F3E6C8"/><rect x="60" y="32" width="10" height="42" rx="1" fill="#FBF7F2"/></g>
+  <text x="200" y="149.0" text-anchor="middle" fill="#FBF7F2" font-family="Georgia, 'Liberation Serif', 'Noto Serif', 'Times New Roman', serif" font-weight="700" font-size="22"><tspan x="200" dy="0">I'VE SEEN</tspan><tspan x="200" dy="24.6">WORSE</tspan><tspan x="200" dy="24.6">VITALS</tspan></text>
+</svg>

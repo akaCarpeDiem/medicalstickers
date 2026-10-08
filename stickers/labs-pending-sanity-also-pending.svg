@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img">
+  <title>Sample sticker artwork: Labs Pending. Sanity Also Pending.</title>
+  <desc>Placeholder artwork for MedicalStickers.shop. Replace this file with a photo of the printed sticker.</desc>
+  <g fill="#FFFFFF"><path d="M 200.0 42.0 Q 233.9 29.3 260.5 54.0 Q 296.7 55.3 311.7 88.3 Q 344.7 103.3 346.0 139.5 Q 370.7 166.1 358.0 200.0 Q 370.7 233.9 346.0 260.5 Q 344.7 296.7 311.7 311.7 Q 296.7 344.7 260.5 346.0 Q 233.9 370.7 200.0 358.0 Q 166.1 370.7 139.5 346.0 Q 103.3 344.7 88.3 311.7 Q 55.3 296.7 54.0 260.5 Q 29.3 233.9 42.0 200.0 Q 29.3 166.1 54.0 139.5 Q 55.3 103.3 88.3 88.3 Q 103.3 55.3 139.5 54.0 Q 166.1 29.3 200.0 42.0 Z"/></g>
+  <g fill="#243F38" transform="translate(200 200) scale(0.9) translate(-200 -200)"><path d="M 200.0 42.0 Q 233.9 29.3 260.5 54.0 Q 296.7 55.3 311.7 88.3 Q 344.7 103.3 346.0 139.5 Q 370.7 166.1 358.0 200.0 Q 370.7 233.9 346.0 260.5 Q 344.7 296.7 311.7 311.7 Q 296.7 344.7 260.5 346.0 Q 233.9 370.7 200.0 358.0 Q 166.1 370.7 139.5 346.0 Q 103.3 344.7 88.3 311.7 Q 55.3 296.7 54.0 260.5 Q 29.3 233.9 42.0 200.0 Q 29.3 166.1 54.0 139.5 Q 55.3 103.3 88.3 88.3 Q 103.3 55.3 139.5 54.0 Q 166.1 29.3 200.0 42.0 Z"/></g>
+  <g transform="translate(200 104) scale(0.58) translate(-50 -50)"><rect x="40" y="10" width="20" height="12" rx="3" fill="#F6F3EE"/><rect x="42" y="20" width="16" height="62" rx="8" fill="#FFFCF8" stroke="#F6F3EE" stroke-width="3"/><rect x="46" y="50" width="8" height="26" rx="4" fill="#E7C98A"/><circle cx="50" cy="42" r="3" fill="#E7C98A"/></g>
+  <text x="200" y="149.0" text-anchor="middle" fill="#F6F3EE" font-family="Georgia, 'Liberation Serif', 'Noto Serif', 'Times New Roman', serif" font-weight="700" font-size="22"><tspan x="200" dy="0">LABS PENDING.</tspan><tspan x="200" dy="24.6">SANITY ALSO</tspan><tspan x="200" dy="24.6">PENDING.</tspan></text>
+</svg>

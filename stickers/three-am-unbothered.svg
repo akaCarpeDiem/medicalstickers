@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img">
+  <title>Sample sticker artwork: 3 A.M. Unbothered</title>
+  <desc>Placeholder artwork for MedicalStickers.shop. Replace this file with a photo of the printed sticker.</desc>
+  <g fill="#FFFFFF"><circle cx="200" cy="200" r="176"/></g>
+  <g fill="#1C1917" transform="translate(200 200) scale(0.9) translate(-200 -200)"><circle cx="200" cy="200" r="176"/></g>
+  <g transform="translate(200 112) scale(0.7) translate(-50 -50)"><path d="M62 18a30 30 0 1 0 12 48 22 22 0 1 1-12-48z" fill="#E7C98A"/><circle cx="28" cy="30" r="3" fill="#F6F3EE"/><circle cx="22" cy="48" r="2" fill="#F6F3EE"/></g>
+  <text x="200" y="169.3" text-anchor="middle" fill="#F6F3EE" font-family="Georgia, 'Liberation Serif', 'Noto Serif', 'Times New Roman', serif" font-weight="700" font-size="31"><tspan x="200" dy="0">3 A.M.</tspan><tspan x="200" dy="34.7">UNBOTHERED</tspan></text>
+</svg>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img">
+  <title>Sample sticker artwork: Night Shift Gremlin</title>
+  <desc>Placeholder artwork for MedicalStickers.shop. Replace this file with a photo of the printed sticker.</desc>
+  <g fill="#FFFFFF"><path d="M200 36C268 22 338 62 358 128C380 202 352 268 312 312C268 360 210 378 156 360C92 338 42 292 36 220C28 140 112 54 200 36Z"/></g>
+  <g fill="#243F38" transform="translate(200 200) scale(0.9) translate(-200 -200)"><path d="M200 36C268 22 338 62 358 128C380 202 352 268 312 312C268 360 210 378 156 360C92 338 42 292 36 220C28 140 112 54 200 36Z"/></g>
+  <g transform="translate(200 112) scale(0.7) translate(-50 -50)"><path d="M22 42 30 12l14 24z" fill="#F6F3EE"/><path d="M78 42 70 12 56 36z" fill="#F6F3EE"/><circle cx="50" cy="54" r="28" fill="#E7C98A"/><path d="M24 50c6 10 46 10 52 0 0 8-10 16-26 16S24 58 24 50z" fill="#243F38"/><circle cx="38" cy="52" r="6" fill="#FFFCF8"/><circle cx="62" cy="52" r="6" fill="#FFFCF8"/><circle cx="39" cy="52" r="2.5" fill="#F6F3EE"/><circle cx="63" cy="52" r="2.5" fill="#F6F3EE"/><ellipse cx="50" cy="66" rx="4" ry="3" fill="#F6F3EE"/></g>
+  <text x="200" y="166.4" text-anchor="middle" fill="#F6F3EE" font-family="Georgia, 'Liberation Serif', 'Noto Serif', 'Times New Roman', serif" font-weight="700" font-size="27"><tspan x="200" dy="0">NIGHT SHIFT</tspan><tspan x="200" dy="30.2">GREMLIN</tspan></text>
+</svg>

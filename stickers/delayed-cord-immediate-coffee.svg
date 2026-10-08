@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img">
+  <title>Sample sticker artwork: Delayed Cord, Immediate Coffee</title>
+  <desc>Placeholder artwork for MedicalStickers.shop. Replace this file with a photo of the printed sticker.</desc>
+  <g fill="#FFFFFF"><rect x="28" y="28" width="344" height="344" rx="86"/></g>
+  <g fill="#243F38" transform="translate(200 200) scale(0.9) translate(-200 -200)"><rect x="28" y="28" width="344" height="344" rx="86"/></g>
+  <g transform="translate(200 104) scale(0.58) translate(-50 -50)"><path d="M28 22c2 8 2 8 0 14M44 18c2 8 2 8 0 16" fill="none" stroke="#F6F3EE" stroke-width="3" stroke-linecap="round"/><rect x="20" y="38" width="44" height="40" rx="8" fill="#E7C98A"/><path d="M64 46h8a12 12 0 0 1 0 24h-8" fill="none" stroke="#E7C98A" stroke-width="6" stroke-linecap="round"/><path d="M34 54h16M42 46v16" stroke="#FFFCF8" stroke-width="3" stroke-linecap="round"/></g>
+  <text x="200" y="149.0" text-anchor="middle" fill="#F6F3EE" font-family="Georgia, 'Liberation Serif', 'Noto Serif', 'Times New Roman', serif" font-weight="700" font-size="22"><tspan x="200" dy="0">DELAYED CORD,</tspan><tspan x="200" dy="24.6">IMMEDIATE</tspan><tspan x="200" dy="24.6">COFFEE</tspan></text>
+</svg>

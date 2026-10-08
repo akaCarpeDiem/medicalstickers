@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img">
+  <title>Sample sticker artwork: Brave Is a Vital Sign</title>
+  <desc>Placeholder artwork for MedicalStickers.shop. Replace this file with a photo of the printed sticker.</desc>
+  <g fill="#FFFFFF"><path d="M 200.0 42.0 Q 233.9 29.3 260.5 54.0 Q 296.7 55.3 311.7 88.3 Q 344.7 103.3 346.0 139.5 Q 370.7 166.1 358.0 200.0 Q 370.7 233.9 346.0 260.5 Q 344.7 296.7 311.7 311.7 Q 296.7 344.7 260.5 346.0 Q 233.9 370.7 200.0 358.0 Q 166.1 370.7 139.5 346.0 Q 103.3 344.7 88.3 311.7 Q 55.3 296.7 54.0 260.5 Q 29.3 233.9 42.0 200.0 Q 29.3 166.1 54.0 139.5 Q 55.3 103.3 88.3 88.3 Q 103.3 55.3 139.5 54.0 Q 166.1 29.3 200.0 42.0 Z"/></g>
+  <g fill="#F4EFE6" transform="translate(200 200) scale(0.9) translate(-200 -200)"><path d="M 200.0 42.0 Q 233.9 29.3 260.5 54.0 Q 296.7 55.3 311.7 88.3 Q 344.7 103.3 346.0 139.5 Q 370.7 166.1 358.0 200.0 Q 370.7 233.9 346.0 260.5 Q 344.7 296.7 311.7 311.7 Q 296.7 344.7 260.5 346.0 Q 233.9 370.7 200.0 358.0 Q 166.1 370.7 139.5 346.0 Q 103.3 344.7 88.3 311.7 Q 55.3 296.7 54.0 260.5 Q 29.3 233.9 42.0 200.0 Q 29.3 166.1 54.0 139.5 Q 55.3 103.3 88.3 88.3 Q 103.3 55.3 139.5 54.0 Q 166.1 29.3 200.0 42.0 Z"/></g>
+  <g transform="translate(200 104) scale(0.58) translate(-50 -50)"><path d="M34 12h12l6 24H28z" fill="#8E2B2A"/><path d="M54 12h12l6 24H48z" fill="#1C1917"/><circle cx="50" cy="64" r="22" fill="#8E2B2A" stroke="#1C1917" stroke-width="3"/><circle cx="50" cy="64" r="8" fill="#FFFCF8"/></g>
+  <text x="200" y="149.0" text-anchor="middle" fill="#1C1917" font-family="Georgia, 'Liberation Serif', 'Noto Serif', 'Times New Roman', serif" font-weight="700" font-size="22"><tspan x="200" dy="0">BRAVE IS</tspan><tspan x="200" dy="24.6">A VITAL</tspan><tspan x="200" dy="24.6">SIGN</tspan></text>
+</svg>

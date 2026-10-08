@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img">
+  <title>Sample sticker artwork: Titrate to Vibe</title>
+  <desc>Placeholder artwork for MedicalStickers.shop. Replace this file with a photo of the printed sticker.</desc>
+  <g fill="#FFFFFF"><circle cx="200" cy="200" r="176"/></g>
+  <g fill="#F4EFE6" transform="translate(200 200) scale(0.9) translate(-200 -200)"><circle cx="200" cy="200" r="176"/></g>
+  <g transform="translate(200 112) scale(0.7) translate(-50 -50)"><path d="M50 88C16 62 6 46 18 30 28 18 42 22 50 36 58 22 72 18 82 30 94 46 84 62 50 88Z" fill="#8E2B2A"/><path d="M40 34c-2-16-16-22-24-14" fill="none" stroke="#8E2B2A" stroke-width="6" stroke-linecap="round"/><path d="M60 32c4-16 20-20 28-10" fill="none" stroke="#8E2B2A" stroke-width="6" stroke-linecap="round"/></g>
+  <text x="200" y="170.0" text-anchor="middle" fill="#1C1917" font-family="Georgia, 'Liberation Serif', 'Noto Serif', 'Times New Roman', serif" font-weight="700" font-size="32"><tspan x="200" dy="0">TITRATE</tspan><tspan x="200" dy="35.8">TO VIBE</tspan></text>
+</svg>

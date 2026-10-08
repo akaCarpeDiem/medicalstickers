@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img">
+  <title>Sample sticker artwork: But Did You Die?</title>
+  <desc>Placeholder artwork for MedicalStickers.shop. Replace this file with a photo of the printed sticker.</desc>
+  <g fill="#FFFFFF"><circle cx="200" cy="200" r="176"/></g>
+  <g fill="#8E2B2A" transform="translate(200 200) scale(0.9) translate(-200 -200)"><circle cx="200" cy="200" r="176"/></g>
+  
+  <text x="200" y="195.0" text-anchor="middle" fill="#FBF7F2" font-family="Georgia, 'Liberation Serif', 'Noto Serif', 'Times New Roman', serif" font-weight="700" font-size="32"><tspan x="200" dy="0">BUT DID</tspan><tspan x="200" dy="35.8">YOU DIE?</tspan></text>
+</svg>

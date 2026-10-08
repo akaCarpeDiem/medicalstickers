@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img">
+  <title>Sample sticker artwork: Patient: Stable. Nurse: Buffering…</title>
+  <desc>Placeholder artwork for MedicalStickers.shop. Replace this file with a photo of the printed sticker.</desc>
+  <g fill="#FFFFFF"><rect x="28" y="28" width="344" height="344" rx="86"/></g>
+  <g fill="#1C1917" transform="translate(200 200) scale(0.9) translate(-200 -200)"><rect x="28" y="28" width="344" height="344" rx="86"/></g>
+  <g transform="translate(200 104) scale(0.58) translate(-50 -50)"><rect x="26" y="24" width="48" height="62" rx="6" fill="#FFFCF8" stroke="#F6F3EE" stroke-width="3"/><rect x="40" y="16" width="20" height="14" rx="4" fill="#E7C98A"/><path d="M36 44h28M36 54h28M36 64h16" stroke="#F6F3EE" stroke-width="3" stroke-linecap="round"/></g>
+  <text x="200" y="149.0" text-anchor="middle" fill="#F6F3EE" font-family="Georgia, 'Liberation Serif', 'Noto Serif', 'Times New Roman', serif" font-weight="700" font-size="18"><tspan x="200" dy="0">PATIENT: STABLE.</tspan><tspan x="200" dy="20.2">NURSE:</tspan><tspan x="200" dy="20.2">BUFFERING…</tspan></text>
+</svg>
