@@ -1,0 +1,108 @@
+/* ms-header-polish-20260927c — header + mobile */
+.bg-red > .container-shop {
+  padding-left: 140px !important;
+  box-sizing: border-box;
+}
+@media (max-width: 980px) {
+  .bg-red > .container-shop {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    justify-content: center !important;
+    font-size: 10px !important;
+    letter-spacing: 0.1em !important;
+    gap: 0.5rem !important;
+  }
+}
+a.etsy-store-btn {
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.45rem !important;
+  padding: 0.5rem 0.85rem !important;
+  line-height: 1.1 !important;
+  white-space: nowrap !important;
+}
+a.etsy-store-btn .etsy-store-btn__logo {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: none;
+  display: block;
+}
+a.etsy-store-btn .etsy-store-btn__label {
+  display: block;
+  text-align: center;
+  line-height: 1.15;
+}
+
+/* Mobile: keep bottle-sticker logo size, stop upward banner collision */
+@media (max-width: 980px) {
+  html, body {
+    overflow-x: clip;
+    max-width: 100vw;
+  }
+  header.relative > .container-shop {
+    height: 6rem !important;
+    min-height: 6rem !important;
+    align-items: flex-end !important;
+    padding-bottom: 0 !important;
+    gap: 0.5rem !important;
+  }
+  header.relative .logo-sticker .logo-img {
+    height: 90px !important;
+    max-width: 220px !important;
+  }
+  /* Menu / cart stay tappable beside logo */
+  header.relative [data-menu-button] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  /* Product / specialty grids already 2-col via Tailwind; tighten padding */
+  #main, main {
+    overflow-x: clip;
+  }
+  footer.bg-footer > .container-shop {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.25rem !important;
+    gap: 1.25rem !important;
+  }
+  footer.bg-footer .border-t > .container-shop {
+    padding-top: 0.85rem !important;
+    padding-bottom: 0.85rem !important;
+  }
+  /* Forms full-width friendly */
+  .field, input.field, select.field, textarea.field,
+  form input[type="search"], form input[type="email"], form select {
+    max-width: 100%;
+  }
+  /* Cookie / modal panels */
+  [data-cookie], .cookie-banner, dialog, [role="dialog"] {
+    max-width: calc(100vw - 1.5rem);
+  }
+}
+
+@media (max-width: 520px) {
+  header.relative .logo-sticker .logo-img {
+    height: 90px !important;
+    max-width: 200px !important;
+  }
+}
+
+/* homepage dept carousel: no cream tiles */
+body .dept .tile {
+  width: auto !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+body .dept img,
+body .dept svg {
+  width: 112px !important;
+  height: 112px !important;
+  max-height: none !important;
+  display: block;
+  margin: 0 auto;
+}
