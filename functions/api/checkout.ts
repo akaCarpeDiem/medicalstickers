@@ -84,7 +84,6 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   params.set("mode", "payment");
   params.set("success_url", `${origin}/thanks/?session_id={CHECKOUT_SESSION_ID}`);
   params.set("cancel_url", `${origin}/cart/`);
-  params.set("payment_method_types[0]", "card");
   params.set("billing_address_collection", "auto");
 
   countries.forEach((c, i) => {
