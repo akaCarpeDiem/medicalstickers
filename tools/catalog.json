@@ -1,0 +1,1202 @@
+[
+ {
+  "code": "A01",
+  "slug": "clinically-tired",
+  "title": "Clinically Tired",
+  "specialty": "general",
+  "collection": "skeleton",
+  "bestseller": false,
+  "image": "/stickers/clinically-tired.webp",
+  "thumb": "/stickers/clinically-tired-400.webp",
+  "printful_product": 481018133,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569500768,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569500770,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A02",
+  "slug": "ive-seen-worse-vitals",
+  "title": "I've Seen Worse Vitals",
+  "specialty": "icu",
+  "collection": "clinical-sarcasm",
+  "bestseller": false,
+  "image": "/stickers/ive-seen-worse-vitals.webp",
+  "thumb": "/stickers/ive-seen-worse-vitals-400.webp",
+  "printful_product": 481018204,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569501016,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569501017,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A03",
+  "slug": "labs-pending-sanity-also-pending",
+  "title": "Labs Pending, Sanity Also Pending",
+  "specialty": "lab",
+  "collection": "skeleton",
+  "bestseller": false,
+  "image": "/stickers/labs-pending-sanity-also-pending.webp",
+  "thumb": "/stickers/labs-pending-sanity-also-pending-400.webp",
+  "printful_product": 481018250,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569501117,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569501119,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A04",
+  "slug": "the-sun-is-up-i-should-not-be",
+  "title": "The Sun Is Up, I Should Not Be",
+  "specialty": "night-shift",
+  "collection": "retro",
+  "bestseller": false,
+  "image": "/stickers/the-sun-is-up-i-should-not-be.webp",
+  "thumb": "/stickers/the-sun-is-up-i-should-not-be-400.webp",
+  "printful_product": 481018411,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569501632,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569501633,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A05",
+  "slug": "npo-until-further-emotional-notice",
+  "title": "NPO Until Further Emotional Notice",
+  "specialty": "or-pacu",
+  "collection": "clinical-sarcasm",
+  "bestseller": false,
+  "image": "/stickers/npo-until-further-emotional-notice.webp",
+  "thumb": "/stickers/npo-until-further-emotional-notice-400.webp",
+  "printful_product": 481018447,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569501764,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569501765,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A06",
+  "slug": "running-on-caffeine-clinical-judgment",
+  "title": "Running on Caffeine & Clinical Judgment",
+  "specialty": "general",
+  "collection": "clinical-sarcasm",
+  "bestseller": false,
+  "image": "/stickers/running-on-caffeine-clinical-judgment.webp",
+  "thumb": "/stickers/running-on-caffeine-clinical-judgment-400.webp",
+  "printful_product": 481018643,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569502285,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569502291,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A07",
+  "slug": "patient-stable-nurse-buffering",
+  "title": "Patient: Stable. Nurse: Buffering",
+  "specialty": "nursing",
+  "collection": "minimal",
+  "bestseller": false,
+  "image": "/stickers/patient-stable-nurse-buffering.webp",
+  "thumb": "/stickers/patient-stable-nurse-buffering-400.webp",
+  "printful_product": 481018677,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569502423,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569502425,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A08",
+  "slug": "chart-now-cry-later",
+  "title": "Chart Now, Cry Later",
+  "specialty": "nursing",
+  "collection": "clinical-sarcasm",
+  "bestseller": false,
+  "image": "/stickers/chart-now-cry-later.webp",
+  "thumb": "/stickers/chart-now-cry-later-400.webp",
+  "printful_product": 481018836,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569503120,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569503122,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A09",
+  "slug": "discharge-is-my-love-language",
+  "title": "Discharge Is My Love Language",
+  "specialty": "nursing",
+  "collection": "minimal",
+  "bestseller": false,
+  "image": "/stickers/discharge-is-my-love-language.webp",
+  "thumb": "/stickers/discharge-is-my-love-language-400.webp",
+  "printful_product": 481018855,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569503182,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569503183,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A10",
+  "slug": "professionally-concerned",
+  "title": "Professionally Concerned",
+  "specialty": "general",
+  "collection": "minimal",
+  "bestseller": true,
+  "image": "/stickers/professionally-concerned.webp",
+  "thumb": "/stickers/professionally-concerned-400.webp",
+  "printful_product": 481019000,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569503539,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569503540,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A11",
+  "slug": "but-did-you-die",
+  "title": "But Did You Die?",
+  "specialty": "emergency",
+  "collection": "dark-humor",
+  "bestseller": false,
+  "image": "/stickers/but-did-you-die.webp",
+  "thumb": "/stickers/but-did-you-die-400.webp",
+  "printful_product": 481019088,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569503717,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569503718,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A12",
+  "slug": "did-you-ask-about-our-turkey-sandwiches",
+  "title": "Did You Ask About Our Turkey Sandwiches?",
+  "specialty": "nursing",
+  "collection": "clinical-sarcasm",
+  "bestseller": false,
+  "image": "/stickers/did-you-ask-about-our-turkey-sandwiches.webp",
+  "thumb": "/stickers/did-you-ask-about-our-turkey-sandwiches-400.webp",
+  "printful_product": 481019221,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569503986,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569503987,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A13",
+  "slug": "night-shift-gremlin",
+  "title": "Night Shift Gremlin",
+  "specialty": "night-shift",
+  "collection": "cute-playful",
+  "bestseller": false,
+  "image": "/stickers/night-shift-gremlin.webp",
+  "thumb": "/stickers/night-shift-gremlin-400.webp",
+  "printful_product": 481019248,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569504069,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569504070,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A14",
+  "slug": "do-not-disturb-until-0700",
+  "title": "Do Not Disturb Until 0700",
+  "specialty": "night-shift",
+  "collection": "cute-playful",
+  "bestseller": false,
+  "image": "/stickers/do-not-disturb-until-0700.webp",
+  "thumb": "/stickers/do-not-disturb-until-0700-400.webp",
+  "printful_product": 481019452,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569505045,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569505047,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A15",
+  "slug": "tiny-humans-big-feelings",
+  "title": "Tiny Humans, Big Feelings",
+  "specialty": "pediatrics",
+  "collection": "cute-playful",
+  "bestseller": false,
+  "image": "/stickers/tiny-humans-big-feelings.webp",
+  "thumb": "/stickers/tiny-humans-big-feelings-400.webp",
+  "printful_product": 481019487,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569505469,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569505471,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A16",
+  "slug": "powered-by-caffeine-questionable-staffing",
+  "title": "Powered by Caffeine & Questionable Staffing",
+  "specialty": "general",
+  "collection": "cute-playful",
+  "bestseller": false,
+  "image": "/stickers/powered-by-caffeine-questionable-staffing.webp",
+  "thumb": "/stickers/powered-by-caffeine-questionable-staffing-400.webp",
+  "printful_product": 481019600,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569506679,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569506680,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A17",
+  "slug": "sinus-rhythm-is-my-love-language",
+  "title": "Sinus Rhythm Is My Love Language",
+  "specialty": "icu",
+  "collection": "anatomy",
+  "bestseller": false,
+  "image": "/stickers/sinus-rhythm-is-my-love-language.webp",
+  "thumb": "/stickers/sinus-rhythm-is-my-love-language-400.webp",
+  "printful_product": 481019635,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569506800,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569506801,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A18",
+  "slug": "scrubs-on-game-face-activated",
+  "title": "Scrubs On, Game Face Activated",
+  "specialty": "nursing",
+  "collection": "cute-playful",
+  "bestseller": false,
+  "image": "/stickers/scrubs-on-game-face-activated.webp",
+  "thumb": "/stickers/scrubs-on-game-face-activated-400.webp",
+  "printful_product": 481019927,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569507652,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569507657,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A19",
+  "slug": "healing-is-messy-but-beautiful",
+  "title": "Healing Is Messy but Beautiful",
+  "specialty": "general",
+  "collection": "anatomy",
+  "bestseller": false,
+  "image": "/stickers/healing-is-messy-but-beautiful.webp",
+  "thumb": "/stickers/healing-is-messy-but-beautiful-400.webp",
+  "printful_product": 481020155,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569507940,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569507943,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A20",
+  "slug": "compassion-in-every-beat",
+  "title": "Compassion in Every Beat",
+  "specialty": "nursing",
+  "collection": "anatomy",
+  "bestseller": false,
+  "image": "/stickers/compassion-in-every-beat.webp",
+  "thumb": "/stickers/compassion-in-every-beat-400.webp",
+  "printful_product": 481020386,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569508462,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569508463,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A21",
+  "slug": "mental-health-matters-too",
+  "title": "Mental Health Matters Too",
+  "specialty": "general",
+  "collection": "anatomy",
+  "bestseller": false,
+  "image": "/stickers/mental-health-matters-too.webp",
+  "thumb": "/stickers/mental-health-matters-too-400.webp",
+  "printful_product": 481020452,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569508662,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569508663,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A22",
+  "slug": "breathe-you-got-this",
+  "title": "Breathe, You Got This",
+  "specialty": "respiratory",
+  "collection": "anatomy",
+  "bestseller": false,
+  "image": "/stickers/breathe-you-got-this.webp",
+  "thumb": "/stickers/breathe-you-got-this-400.webp",
+  "printful_product": 481020528,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569508950,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569508952,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A23",
+  "slug": "some-heroes-wear-scrubs",
+  "title": "Some Heroes Wear Scrubs",
+  "specialty": "nursing",
+  "collection": "anatomy",
+  "bestseller": false,
+  "image": "/stickers/some-heroes-wear-scrubs.webp",
+  "thumb": "/stickers/some-heroes-wear-scrubs-400.webp",
+  "printful_product": 481020625,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569509155,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569509156,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "A24",
+  "slug": "medication-rights",
+  "title": "Medication Rights",
+  "specialty": "pharmacy",
+  "collection": "minimal",
+  "bestseller": false,
+  "image": "/stickers/medication-rights.webp",
+  "thumb": "/stickers/medication-rights-400.webp",
+  "printful_product": 481021405,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569510291,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569510292,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B01",
+  "slug": "trauma-team-snack-crew",
+  "title": "Trauma Team Snack Crew",
+  "specialty": "emergency",
+  "collection": "clinical-sarcasm",
+  "bestseller": true,
+  "image": "/stickers/trauma-team-snack-crew.webp",
+  "thumb": "/stickers/trauma-team-snack-crew-400.webp",
+  "printful_product": 481021468,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569510474,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569510475,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B02",
+  "slug": "rad-people-keep-people-alive",
+  "title": "Rad People Keep People Alive",
+  "specialty": "radiology",
+  "collection": "clinical-sarcasm",
+  "bestseller": false,
+  "image": "/stickers/rad-people-keep-people-alive.webp",
+  "thumb": "/stickers/rad-people-keep-people-alive-400.webp",
+  "printful_product": 481021592,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569510978,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569510983,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B03",
+  "slug": "lab-life",
+  "title": "Lab Life",
+  "specialty": "lab",
+  "collection": "minimal",
+  "bestseller": false,
+  "image": "/stickers/lab-life.webp",
+  "thumb": "/stickers/lab-life-400.webp",
+  "printful_product": 481021610,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569511073,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569511074,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B04",
+  "slug": "rt-breathing-room-expert",
+  "title": "RT: Breathing Room Expert",
+  "specialty": "respiratory",
+  "collection": "anatomy",
+  "bestseller": false,
+  "image": "/stickers/rt-breathing-room-expert.webp",
+  "thumb": "/stickers/rt-breathing-room-expert-400.webp",
+  "printful_product": 481021794,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569511519,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569511520,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B05",
+  "slug": "pharmacy-tiny-doses-big-consequences",
+  "title": "Pharmacy: Tiny Doses, Big Consequences",
+  "specialty": "pharmacy",
+  "collection": "clinical-sarcasm",
+  "bestseller": false,
+  "image": "/stickers/pharmacy-tiny-doses-big-consequences.webp",
+  "thumb": "/stickers/pharmacy-tiny-doses-big-consequences-400.webp",
+  "printful_product": 481021828,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569511615,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569511619,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B06",
+  "slug": "peds-mode-stickers-fix-everything",
+  "title": "Peds Mode: Stickers Fix Everything",
+  "specialty": "pediatrics",
+  "collection": "cute-playful",
+  "bestseller": false,
+  "image": "/stickers/peds-mode-stickers-fix-everything.webp",
+  "thumb": "/stickers/peds-mode-stickers-fix-everything-400.webp",
+  "printful_product": 481022071,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569512215,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569512216,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B07",
+  "slug": "slightly-caffeinated-mostly-functional",
+  "title": "Slightly Caffeinated, Mostly Functional",
+  "specialty": "general",
+  "collection": "clinical-sarcasm",
+  "bestseller": true,
+  "image": "/stickers/slightly-caffeinated-mostly-functional.webp",
+  "thumb": "/stickers/slightly-caffeinated-mostly-functional-400.webp",
+  "printful_product": 481022126,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569512561,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569512562,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B08",
+  "slug": "scrubs-have-pockets-for-a-reason",
+  "title": "Scrubs Have Pockets for a Reason",
+  "specialty": "nursing",
+  "collection": "clinical-sarcasm",
+  "bestseller": false,
+  "image": "/stickers/scrubs-have-pockets-for-a-reason.webp",
+  "thumb": "/stickers/scrubs-have-pockets-for-a-reason-400.webp",
+  "printful_product": 481022332,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569513415,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569513417,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B09",
+  "slug": "runs-on-caffeine-and-good-intentions",
+  "title": "Runs on Caffeine and Good Intentions",
+  "specialty": "nursing",
+  "collection": "minimal",
+  "bestseller": false,
+  "image": "/stickers/runs-on-caffeine-and-good-intentions.webp",
+  "thumb": "/stickers/runs-on-caffeine-and-good-intentions-400.webp",
+  "printful_product": 481022404,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569513606,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569513608,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B10",
+  "slug": "meds-memes-miracles",
+  "title": "Meds, Memes & Miracles",
+  "specialty": "pharmacy",
+  "collection": "cute-playful",
+  "bestseller": false,
+  "image": "/stickers/meds-memes-miracles.webp",
+  "thumb": "/stickers/meds-memes-miracles-400.webp",
+  "printful_product": 481022679,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569514412,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569514420,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B11",
+  "slug": "small-sticker-big-cope",
+  "title": "Small Sticker, Big Cope",
+  "specialty": "general",
+  "collection": "cute-playful",
+  "bestseller": false,
+  "image": "/stickers/small-sticker-big-cope.webp",
+  "thumb": "/stickers/small-sticker-big-cope-400.webp",
+  "printful_product": 481022730,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569514782,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569514789,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B12",
+  "slug": "another-shift-another-character-arc",
+  "title": "Another Shift, Another Character Arc",
+  "specialty": "general",
+  "collection": "clinical-sarcasm",
+  "bestseller": false,
+  "image": "/stickers/another-shift-another-character-arc.webp",
+  "thumb": "/stickers/another-shift-another-character-arc-400.webp",
+  "printful_product": 481023004,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569515853,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569515859,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B13",
+  "slug": "its-fine-im-fine-everythings-fine",
+  "title": "It's Fine. I'm Fine. Everything's Fine.",
+  "specialty": "icu",
+  "collection": "skeleton",
+  "bestseller": true,
+  "image": "/stickers/its-fine-im-fine-everythings-fine.webp",
+  "thumb": "/stickers/its-fine-im-fine-everythings-fine-400.webp",
+  "printful_product": 481023052,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569516030,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569516031,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B14",
+  "slug": "ama-form-ready",
+  "title": "AMA Form Ready",
+  "specialty": "emergency",
+  "collection": "skeleton",
+  "bestseller": false,
+  "image": "/stickers/ama-form-ready.webp",
+  "thumb": "/stickers/ama-form-ready-400.webp",
+  "printful_product": 481023319,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569516698,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569516699,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B15",
+  "slug": "another-day-another-10-10-pain",
+  "title": "Another Day, Another 10/10 Pain",
+  "specialty": "emergency",
+  "collection": "skeleton",
+  "bestseller": false,
+  "image": "/stickers/another-day-another-10-10-pain.webp",
+  "thumb": "/stickers/another-day-another-10-10-pain-400.webp",
+  "printful_product": 481023412,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569517207,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569517209,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B16",
+  "slug": "night-shift-unsupervised-after-midnight",
+  "title": "Night Shift: Unsupervised After Midnight",
+  "specialty": "night-shift",
+  "collection": "skeleton",
+  "bestseller": false,
+  "image": "/stickers/night-shift-unsupervised-after-midnight.webp",
+  "thumb": "/stickers/night-shift-unsupervised-after-midnight-400.webp",
+  "printful_product": 481023525,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569518084,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569518085,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B17",
+  "slug": "no-worries-just-worse-vitals",
+  "title": "No Worries, Just Worse Vitals",
+  "specialty": "icu",
+  "collection": "skeleton",
+  "bestseller": false,
+  "image": "/stickers/no-worries-just-worse-vitals.webp",
+  "thumb": "/stickers/no-worries-just-worse-vitals-400.webp",
+  "printful_product": 481023603,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569518365,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569518366,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B18",
+  "slug": "dead-tired-but-still-charting",
+  "title": "Dead Tired but Still Charting",
+  "specialty": "nursing",
+  "collection": "skeleton",
+  "bestseller": false,
+  "image": "/stickers/dead-tired-but-still-charting.webp",
+  "thumb": "/stickers/dead-tired-but-still-charting-400.webp",
+  "printful_product": 481023735,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569518958,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569518959,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B19",
+  "slug": "charts-coffee-chaos-care",
+  "title": "Charts. Coffee. Chaos. Care.",
+  "specialty": "nursing",
+  "collection": "retro",
+  "bestseller": true,
+  "image": "/stickers/charts-coffee-chaos-care.webp",
+  "thumb": "/stickers/charts-coffee-chaos-care-400.webp",
+  "printful_product": 481023752,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569519231,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569519232,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B20",
+  "slug": "stable-ish",
+  "title": "Stable-ish",
+  "specialty": "icu",
+  "collection": "minimal",
+  "bestseller": true,
+  "image": "/stickers/stable-ish.webp",
+  "thumb": "/stickers/stable-ish-400.webp",
+  "printful_product": 481024059,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569521439,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569521440,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B21",
+  "slug": "difficult-patients-build-character",
+  "title": "Difficult Patients Build Character",
+  "specialty": "general",
+  "collection": "retro",
+  "bestseller": false,
+  "image": "/stickers/difficult-patients-build-character.webp",
+  "thumb": "/stickers/difficult-patients-build-character-400.webp",
+  "printful_product": 481024095,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569522167,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569522168,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B22",
+  "slug": "i-came-i-saw-i-triaged",
+  "title": "I Came. I Saw. I Triaged.",
+  "specialty": "emergency",
+  "collection": "clinical-sarcasm",
+  "bestseller": false,
+  "image": "/stickers/i-came-i-saw-i-triaged.webp",
+  "thumb": "/stickers/i-came-i-saw-i-triaged-400.webp",
+  "printful_product": 481024362,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569524125,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569524126,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B23",
+  "slug": "probably-fine",
+  "title": "Probably Fine",
+  "specialty": "emergency",
+  "collection": "dark-humor",
+  "bestseller": false,
+  "image": "/stickers/probably-fine.webp",
+  "thumb": "/stickers/probably-fine-400.webp",
+  "printful_product": 481024421,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569524563,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569524566,
+    "price": 6.5
+   }
+  ]
+ },
+ {
+  "code": "B24",
+  "slug": "same-chaos-bigger-stickers",
+  "title": "Same Chaos, Bigger Stickers",
+  "specialty": "general",
+  "collection": "retro",
+  "bestseller": false,
+  "image": "/stickers/same-chaos-bigger-stickers.webp",
+  "thumb": "/stickers/same-chaos-bigger-stickers-400.webp",
+  "printful_product": 481024567,
+  "variants": [
+   {
+    "size": "3\u2033 \u00d7 3\u2033",
+    "label": "3x3",
+    "sync_variant_id": 5569526186,
+    "price": 5.75
+   },
+   {
+    "size": "4\u2033 \u00d7 4\u2033",
+    "label": "4x4",
+    "sync_variant_id": 5569526187,
+    "price": 6.5
+   }
+  ]
+ }
+]
