@@ -127,6 +127,7 @@
     .trust article { display:flex; gap:8px; align-items:flex-start; }
     .photo { position:relative; border-radius:16px; overflow:hidden; background:var(--cream); height:300px; display:grid; place-items:center; }
     .photo img { width:100%; height:100%; object-fit:contain; object-position:center center; }
+    .photo > #hero-bottle { width:auto !important; height:100%; } /* contain-fit like the old hero img */
     .scribble { position:absolute; top:14px; right:14px; margin:0; font-family:Caveat, cursive; font-size:30px; line-height:.95; transform:rotate(-3deg); text-align:right; color:#2a2118; }
     .scribble i { color:var(--red); font-style:normal; }
     .section { padding:6px 0 4px; }
@@ -460,7 +461,7 @@
         </div>
       </div>
       <div class="photo">
-        <img src="/assets/home/hero-lifestyle-bottle.jpg" alt="Dark green insulated bottle on a wooden desk with four medical stickers — Caffeine Fuels Care cup, anatomical heart, heart-shaped stethoscope, and Probably Fine bandage — beside a stethoscope, pens, mug, and plant" width="1519" height="1036" />
+        <div id="hero-bottle" style="width:100%;max-width:100%;aspect-ratio:1519/1036;background:url('/assets/hero-bottle/base.jpg') center/cover no-repeat;"></div>
       </div>
     </section>
 
@@ -713,5 +714,21 @@
   </script>
 
 
+<script src="/assets/hero-bottle/sticker-bottle.js"></script>
+<script>
+  (function () {
+    var base = '/assets/hero-bottle';
+    var names = ['clinically-tired','ive-seen-worse-vitals','the-sun-is-up','npo-until-further-notice','but-did-you-die','turkey-sandwiches','trauma-team-snack-crew','rad-people','rt-breathing-room-expert','peds-mode','scrubs-have-pockets','small-sticker-big-cope','its-fine-im-fine','ama-form-ready','another-10-10-pain','night-shift-unsupervised','no-worries-just-worse-vitals','dead-tired-still-charting'];
+    function start() {
+      var el = document.getElementById('hero-bottle');
+      if (!el || !window.StickerBottle) return;
+      StickerBottle.mount(el, {
+        base: base + '/base.jpg',
+        stickers: names.map(function (n) { return base + '/stickers/' + n + '.webp'; })
+      });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+  })();
+</script>
 </body>
 </html>
