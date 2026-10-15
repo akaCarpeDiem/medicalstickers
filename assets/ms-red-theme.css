@@ -1,0 +1,145 @@
+/* ms-red-theme-20261015 — one-hue treatment built from the brand red (#8e2b2a).
+   Load LAST on every page, after the page's own <style> and the other ms-*.css files. */
+:root {
+  --r-25:  #fdf8f7;
+  --r-50:  #fbf0ee;
+  --r-100: #f6e0dc;
+  --r-200: #ecc5be;
+  --r-300: #dc9c92;
+  --r-400: #c3665b;
+  --r-500: #a83a33;
+  --r-600: #8e2b2a; /* brand */
+  --r-700: #6f201f;
+  --r-800: #551918;
+  --r-900: #3c1211;
+  --r-ink: #231816;
+  --r-muted: #6b5451;
+
+  /* Homepage variables (index.html <style>) */
+  --cream: var(--r-25);
+  --card:  var(--r-50);
+  --line:  var(--r-100);
+  --muted: var(--r-muted);
+  --red:   var(--r-600);
+  --red-d: var(--r-700);
+  --teal:  var(--r-800);
+  --ink:   var(--r-ink);
+
+  /* Astro / Tailwind variables (all other pages) */
+  --color-cream: var(--r-25);
+  --color-ivory: var(--r-25);
+  --color-card:  var(--r-50);
+  --color-line:  var(--r-100);
+  --color-muted: var(--r-muted);
+  --color-red: var(--r-600);
+  --color-red-dark: var(--r-700);
+  --color-footer: var(--r-600);
+  --color-footer-ink: #f8e9e6;
+  --color-ink: var(--r-ink);
+}
+
+body { background-color: var(--r-25); }
+::selection { background: var(--r-200); color: var(--r-900); }
+:focus-visible { outline: 2px solid var(--r-400); outline-offset: 2px; }
+
+/* ---------- Shared: top banner + header ---------- */
+.ann, .bg-red.text-white:first-child {
+  background-image: linear-gradient(90deg, var(--r-700), var(--r-600) 50%, var(--r-700)) !important;
+}
+header { background: rgba(253, 248, 247, .94) !important; box-shadow: 0 1px 0 var(--r-100), 0 8px 18px -12px rgba(85, 25, 24, .22) !important; }
+header::after { background: linear-gradient(180deg, rgba(142, 43, 42, .06), transparent) !important; }
+nav > a:hover, .drop > a:hover { background: var(--r-50) !important; color: var(--r-600) !important; }
+.menu { border-color: var(--r-100) !important; box-shadow: 0 14px 32px rgba(85, 25, 24, .12) !important; }
+.menu a:hover { background: var(--r-50); color: var(--r-600); border-radius: 8px; }
+.search, .iconbtn, .menu-toggle, .mobile-search input { border-color: var(--r-200) !important; background: #fff !important; }
+.search:focus-within, .mobile-search input:focus { border-color: var(--r-400) !important; box-shadow: 0 0 0 3px rgba(142, 43, 42, .14); }
+.iconbtn:hover, .menu-toggle:hover { background: var(--r-50) !important; border-color: var(--r-300) !important; }
+.mobile-nav-inner { background: var(--r-25) !important; border-color: var(--r-100) !important; }
+.mobile-links a:hover, .mobile-links a:focus-visible { background: var(--r-50) !important; }
+
+.about-photo { background: transparent !important; }
+.photo { background: transparent !important; }
+.photo > #hero-bottle { border-color: var(--r-200) !important; }
+
+/* Type accents */
+.eyebrow, .kicker { color: var(--r-500) !important; }
+h1, h2 { color: var(--r-ink); }
+.lede, .script-side { color: #4a3633 !important; }
+.trust b { color: var(--r-700); }
+.trust svg { color: var(--r-600); }
+
+/* ---------- Buttons: one hue, a shade per button type ---------- */
+/* Primary */
+.btn {
+  background: var(--r-600) !important; color: #fff !important; border: 1px solid var(--r-600) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 6px 16px -6px rgba(142, 43, 42, .55);
+  transition: background-color .15s ease, border-color .15s ease, box-shadow .15s ease, transform .12s ease;
+}
+.btn:hover { background: var(--r-700) !important; border-color: var(--r-700) !important; }
+.btn:active { transform: translateY(1px); }
+/* Secondary: second hero button (Shop New Arrivals), cookie "Essential only" */
+.hero-ctas .btn + .btn, .btn.btn-secondary {
+  background: #fff !important; color: var(--r-600) !important; border-color: var(--r-200) !important;
+  box-shadow: 0 1px 2px rgba(85, 25, 24, .06);
+}
+.hero-ctas .btn + .btn:hover, .btn.btn-secondary:hover { background: var(--r-50) !important; border-color: var(--r-400) !important; color: var(--r-700) !important; }
+/* Dark: About block button (Our Story) */
+#about .btn { background: var(--r-800) !important; border-color: var(--r-800) !important; box-shadow: 0 6px 16px -6px rgba(60, 18, 17, .6); }
+#about .btn:hover { background: var(--r-900) !important; border-color: var(--r-900) !important; }
+/* Quick-add "+" buttons: soft tint that fills on hover */
+.plus { background: var(--r-100) !important; color: var(--r-600) !important; box-shadow: inset 0 0 0 1px var(--r-200); transition: background-color .15s ease, color .15s ease, transform .12s ease; }
+.plus:hover { background: var(--r-600) !important; color: #fff !important; }
+/* Text links */
+.more { color: var(--r-600) !important; }
+.more:hover { color: var(--r-700) !important; text-decoration: underline; text-underline-offset: 3px; }
+.dept span { color: var(--r-500) !important; }
+.dept:hover span { color: var(--r-700) !important; }
+/* Carousel arrows */
+.dept-arrow { border-color: var(--r-200) !important; background: #fff !important; color: var(--r-700) !important; box-shadow: 0 6px 14px -6px rgba(85, 25, 24, .3) !important; }
+.dept-arrow:hover:not(:disabled) { background: var(--r-50) !important; border-color: var(--r-300) !important; }
+/* Newsletter button */
+.news button { background: var(--r-800) !important; }
+.news button:hover { background: var(--r-900) !important; }
+
+/* ---------- Product cards ---------- */
+.die {
+  background: linear-gradient(180deg, #fff 0%, var(--r-25) 100%) !important;
+  border: 1px solid var(--r-100);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+#shop .die { background: #fff !important; }
+.card:hover .die { border-color: var(--r-300); box-shadow: 0 10px 22px -12px rgba(85, 25, 24, .35); }
+.card h3 a:hover, .card h3:hover { color: var(--r-600); }
+.badge-new { background: var(--r-500) !important; color: #fff !important; }
+.stars { color: #c98a1a; }
+
+/* ---------- Footer text tint (was a green-gray) ---------- */
+.fine { color: rgba(248, 233, 230, .72) !important; }
+.social a { border-color: rgba(255, 255, 255, .28) !important; }
+.social a:hover { background: rgba(255, 255, 255, .1); }
+
+/* ---------- Toast ---------- */
+.toast { background: var(--r-800) !important; }
+
+/* ---------- Other pages (Astro layout) ---------- */
+/* Page-title blocks and white panels pick up the tint through the variables above.
+   Extra shades for buttons and pills: */
+/* Page-title block at the top of shop, specialty, collection and info pages */
+section.border-b.border-line.bg-ivory {
+  background-color: var(--r-50) !important;
+  background-image: radial-gradient(560px 240px at 88% 0%, rgba(220, 156, 146, .26), transparent 70%);
+  border-color: var(--r-100) !important;
+}
+/* Bestseller pills */
+span.bg-ink { background-color: var(--r-800) !important; }
+a.bg-red, button.bg-red { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 6px 16px -6px rgba(142, 43, 42, .5); }
+a.bg-red:hover, button.bg-red:hover { background-color: var(--r-700) !important; }
+a.bg-ink, button.bg-ink { background-color: var(--r-800) !important; }
+a.bg-ink:hover, button.bg-ink:hover { background-color: var(--r-900) !important; }
+a.bg-white.border-line:hover, button.bg-white.border-line:hover,
+a.bg-ivory.border-line:hover, button.bg-ivory.border-line:hover { border-color: var(--r-300) !important; background-color: var(--r-50) !important; }
+input, select, textarea { border-color: var(--r-200); }
+input:focus, select:focus, textarea:focus { border-color: var(--r-400) !important; box-shadow: 0 0 0 3px rgba(142, 43, 42, .14); outline: none; }
+.hover\:bg-card:hover { background-color: var(--r-50) !important; }
+.hover\:border-red:hover { border-color: var(--r-400) !important; }
+input[type="radio"], input[type="checkbox"], progress { accent-color: var(--r-600); }

@@ -20,7 +20,7 @@ R = [
  ('Answers about buying MedicalStickers.shop stickers, Etsy checkout, shipping, returns, and what the stickers are not.', 'Answers about buying MedicalStickers.shop stickers, checkout, shipping, returns, and what the stickers are not.'),
  ('Accounts open when direct checkout does. Orders placed today are tracked on Etsy.', 'No account needed. Check out as a guest; order updates come by email.'),
  ("Privacy policy for MedicalStickers.shop. What we collect, what we don't, and how Etsy checkout is separate.", "Privacy policy for MedicalStickers.shop. What we collect, what we don't, and how Stripe and Printful handle your order."),
- ('Returns for MedicalStickers.shop. Unused stickers can come back within 14 days. Etsy orders start from the Etsy receipt.', 'Returns for MedicalStickers.shop. Damaged or misprinted stickers are replaced or refunded within 14 days of delivery.'),
+ ('Returns for MedicalStickers.shop. Unused stickers can come back within 14 days. Etsy orders start from the Etsy receipt.', 'All sales are final. Damaged, misprinted, or wrong stickers are replaced or refunded within 14 days of delivery.'),
  ('Shipping for MedicalStickers.shop. Free U.S. shipping on orders $25+. Orders currently check out on Etsy.', 'Shipping for MedicalStickers.shop. Free U.S. shipping on orders $25+; $4.99 flat under $25.'),
  # policy bodies
  ("<p>MedicalStickers.shop is an independent sticker shop for healthcare workers. The website is the brand home. Purchases are currently completed on Etsy unless a product page clearly offers direct checkout. Etsy's own terms cover that transaction, including payment processing.</p>",
@@ -57,6 +57,9 @@ for f in glob.glob('**/*.html', recursive=True):
     if f == 'index.html':
         s = swap_div(s, '<div class="cards">', ''.join(home_card(BY[c]) for c in ['B07', 'B13', 'B01', 'A10', 'B19', 'B20']))
         s = swap_div(s, '<div class="arrivals">', ''.join(home_card(BY[c], True) for c in ['B09', 'B08', 'B21', 'B10', 'B02', 'B11', 'B12']))
+    # one-color red theme: last stylesheet, right after ms-footer-polish.css
+    if 'ms-red-theme.css' not in s:
+        s = re.sub(r'(<link rel="stylesheet" href="/assets/ms-footer-polish\.css[^"]*">)', lambda m: m.group(1) + ('\n' if f == 'index.html' else '') + '<link rel="stylesheet" href="/assets/ms-red-theme.css?v=20261015r">', s, count=1)
     if s != o: open(f, 'w').write(s)
 # thanks page from the cart page shell
 s = open('cart/index.html').read(); i = s.find('<main'); j = s.find('</main>') + 7
