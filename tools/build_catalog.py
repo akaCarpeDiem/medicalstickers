@@ -86,7 +86,8 @@ TEXT = [
 
 def main():
     # template product page before we delete products/
-    tpl_prod = open('products/chart-now-cry-later/index.html').read() if os.path.exists('products/chart-now-cry-later/index.html') else open('/workspace/medicalstickers-printful/site/product-template.html').read()
+    TPL = 'lab-life'
+    tpl_prod = open(f'products/{TPL}/index.html').read() if os.path.exists(f'products/{TPL}/index.html') else open('/workspace/medicalstickers-printful/site/product-template.html').read()
     open('/workspace/medicalstickers-printful/site/product-template.html', 'w').write(tpl_prod)
     old_slugs = [os.path.basename(d.rstrip('/')) for d in glob.glob('products/*/')]
     new_slugs = {p['slug'] for p in CAT}
@@ -150,7 +151,7 @@ def main():
         page = re.sub(r'(<meta name="description" content=")[^"]*(")', lambda m: m.group(1) + E(desc(p)) + m.group(2), page)
         page = re.sub(r'(<meta property="og:title" content=")[^"]*(")', lambda m: m.group(1) + E(p["title"]) + ' Sticker' + m.group(2), page)
         page = re.sub(r'(<meta property="og:description" content=")[^"]*(")', lambda m: m.group(1) + E(desc(p)) + m.group(2), page)
-        page = page.replace('/products/chart-now-cry-later/', f'/products/{p["slug"]}/').replace('chart-now-cry-later.png', p['slug'] + '.webp').replace('/stickers/chart-now-cry-later', '/stickers/' + p['slug'])
+        page = page.replace(f'/products/{TPL}/', f'/products/{p["slug"]}/').replace(f'/stickers/{TPL}', '/stickers/' + p['slug'])
         page = re.sub(r'<script type="application/ld\+json">.*?</script>', '', page, flags=re.S)
         ld = {"@context": "https://schema.org", "@type": "Product", "name": p["title"] + " Sticker", "image": "https://medicalstickers.shop" + p["image"], "description": desc(p), "brand": {"@type": "Brand", "name": "MedicalStickers.shop"},
               "offers": [{"@type": "Offer", "priceCurrency": "USD", "price": f'{v["price"]:.2f}', "name": v["size"], "availability": "https://schema.org/InStock", "url": f"https://medicalstickers.shop/products/{p['slug']}/"} for v in p["variants"]]}

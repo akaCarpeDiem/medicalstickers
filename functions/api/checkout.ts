@@ -10,6 +10,9 @@ import {
   stripeForm,
 } from "../lib/stripe";
 
+// Products removed from the store (Stable-ish, Chart Now Cry Later).
+const REMOVED_VARIANTS = new Set([5569521439, 5569521440, 5569503120, 5569503122]);
+
 type CartItem = { sync_variant_id: number; qty: number };
 
 function parseCart(body: any): { ok: true; items: CartItem[] } | { ok: false; error: string } {
@@ -54,6 +57,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // Re-price on the server from Printful retail prices — never trust client prices.
   const lineItems: { sync_variant_id: number; qty: number; name: string; unit_cents: number }[] = [];
   for (const item of parsed.items) {
+    if (REMOVED_VARIANTS.has(item.sync_variant_id)) {
+      return json({ error: `Variant ${item.sync_variant_id} is not available.` }, 400);
+    }
     const looked = await getSyncVariant(env, item.sync_variant_id);
     if (!looked.ok || !looked.variant) {
       return json({ error: `Unknown sync_variant_id: ${item.sync_variant_id}` }, 400);

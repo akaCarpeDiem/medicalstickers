@@ -175,31 +175,6 @@
   ]
  },
  {
-  "code": "A08",
-  "slug": "chart-now-cry-later",
-  "title": "Chart Now, Cry Later",
-  "specialty": "nursing",
-  "collection": "clinical-sarcasm",
-  "bestseller": false,
-  "image": "/stickers/chart-now-cry-later.webp",
-  "thumb": "/stickers/chart-now-cry-later-400.webp",
-  "printful_product": 481018836,
-  "variants": [
-   {
-    "size": "3\u2033 \u00d7 3\u2033",
-    "label": "3x3",
-    "sync_variant_id": 5569503120,
-    "price": 5.75
-   },
-   {
-    "size": "4\u2033 \u00d7 4\u2033",
-    "label": "4x4",
-    "sync_variant_id": 5569503122,
-    "price": 6.5
-   }
-  ]
- },
- {
   "code": "A09",
   "slug": "discharge-is-my-love-language",
   "title": "Discharge Is My Love Language",
@@ -1070,31 +1045,6 @@
     "size": "4\u2033 \u00d7 4\u2033",
     "label": "4x4",
     "sync_variant_id": 5569519232,
-    "price": 6.5
-   }
-  ]
- },
- {
-  "code": "B20",
-  "slug": "stable-ish",
-  "title": "Stable-ish",
-  "specialty": "icu",
-  "collection": "minimal",
-  "bestseller": true,
-  "image": "/stickers/stable-ish.webp",
-  "thumb": "/stickers/stable-ish-400.webp",
-  "printful_product": 481024059,
-  "variants": [
-   {
-    "size": "3\u2033 \u00d7 3\u2033",
-    "label": "3x3",
-    "sync_variant_id": 5569521439,
-    "price": 5.75
-   },
-   {
-    "size": "4\u2033 \u00d7 4\u2033",
-    "label": "4x4",
-    "sync_variant_id": 5569521440,
     "price": 6.5
    }
   ]
