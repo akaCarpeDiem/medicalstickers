@@ -29,6 +29,7 @@
     // Timing (ms). One sticker = `each` ms including its entrance and exit.
     each: 5000, enter: 700, exit: 500,
     shuffle: false,
+    startAt: 0,                // ms into the cycle to begin (e.g. `enter` = first sticker already pressed on)
     onChange: null             // function(index, src) called when a new sticker starts
   };
 
@@ -226,7 +227,7 @@
       ctx.restore();
     }
 
-    var start = 0, last = 0, elapsed = 0, current = -1, raf = 0;
+    var start = 0, last = 0, elapsed = +o.startAt || 0, current = -1, raf = 0;
     function frame(now) {
       raf = requestAnimationFrame(frame);
       if (!last) last = now;
@@ -255,7 +256,7 @@
     loadImage(o.base).then(function (im) {
       base = im; if (!base) return;
       texture = buildTexture();
-      drawSticker(null);
+      if (!o.startAt) drawSticker(null);   // with startAt, keep the container's pre-rendered fallback until the first sticker is ready
       return Promise.all(o.stickers.map(loadImage));
     }).then(function (ims) {
       if (!ims) return;
