@@ -55,8 +55,8 @@ for f in glob.glob('**/*.html', recursive=True):
     s = open(f).read(); o = s
     for a, b in R: s = a.sub(b, s) if hasattr(a, 'sub') else s.replace(a, b)
     if f == 'index.html':
-        s = swap_div(s, '<div class="cards">', ''.join(home_card(BY[c]) for c in ['B07', 'B13', 'B01', 'A10', 'B19', 'B20']))
-        s = swap_div(s, '<div class="arrivals">', ''.join(home_card(BY[c], True) for c in ['B09', 'B08', 'B21', 'B10', 'B02', 'B11', 'B12']))
+        s = swap_div(s, '<div class="cards">', ''.join(home_card(BY[c]) for c in ['B07', 'B13', 'B01', 'A10', 'B19', 'B15']))
+        s = swap_div(s, '<div class="arrivals">', ''.join(home_card(BY[c], True) for c in ['B09', 'B08', 'B21', 'B10', 'B02', 'B11']))
     # no social links until real accounts exist
     s = re.sub(r'<ul class="flex items-center gap-4">(?:<li><a[^>]*(?:instagram|tiktok|pinterest)[^>]*>.*?</a></li>)+</ul>', '', s)
     s = re.sub(r'\s*<div class="news">\s*<div class="social".*?</div>\s*</div>', '', s, flags=re.S)

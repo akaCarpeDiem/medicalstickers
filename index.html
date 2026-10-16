@@ -372,6 +372,11 @@
       .ann-inner { font-size:9.5px; letter-spacing:.08em; }
     }
 
+    /* Home rows: 6 equal cards, no horizontal scroll (desktop 6, tablet 3, phone 2) */
+    .cards, .arrivals { display:grid !important; grid-template-columns:repeat(6, minmax(0, 1fr)) !important; gap:12px !important; overflow:visible !important; padding-bottom:0 !important; scroll-snap-type:none !important; }
+    .cards .card, .arrivals .card { flex:none !important; min-width:0; margin-bottom:0; }
+    @media (max-width: 980px) { .cards, .arrivals { grid-template-columns:repeat(3, minmax(0, 1fr)) !important; } }
+    @media (max-width: 520px) { .cards, .arrivals { grid-template-columns:repeat(2, minmax(0, 1fr)) !important; gap:10px !important; } }
   </style>
 <link rel="preload" as="image" href="/assets/hero-bottle/first-frame.jpg">
 <link rel="stylesheet" href="/assets/ms-footer-polish.css?v=20261015b">
@@ -525,6 +530,11 @@
           <div class="meta"><span class="price">From $5.75</span><a class="plus" href="/products/charts-coffee-chaos-care/" aria-label="Choose a size for Charts. Coffee. Chaos. Care.">+</a></div>
         </article>
         
+        <article class="card" data-product="Another Day, Another 10/10 Pain">
+          <a href="/products/another-day-another-10-10-pain/"><div class="die"><img src="/stickers/another-day-another-10-10-pain-400.webp" alt="Another Day, Another 10/10 Pain sticker" loading="lazy" /></div></a>
+          <h3>Another Day, Another 10/10 Pain</h3>
+          <div class="meta"><span class="price">From $5.75</span><a class="plus" href="/products/another-day-another-10-10-pain/" aria-label="Choose a size for Another Day, Another 10/10 Pain">+</a></div>
+        </article>
       </div>
     </section>
 
@@ -569,12 +579,6 @@
           <a href="/products/small-sticker-big-cope/"><div class="die"><img src="/stickers/small-sticker-big-cope-400.webp" alt="Small Sticker, Big Cope sticker" loading="lazy" /></div></a>
           <h3>Small Sticker, Big Cope</h3>
           <div class="meta"><span class="price">From $5.75</span><a class="plus" href="/products/small-sticker-big-cope/" aria-label="Choose a size for Small Sticker, Big Cope">+</a></div>
-        </article>
-        <article class="card" data-product="Another Shift, Another Character Arc">
-          <span class="badge-new">New</span>
-          <a href="/products/another-shift-another-character-arc/"><div class="die"><img src="/stickers/another-shift-another-character-arc-400.webp" alt="Another Shift, Another Character Arc sticker" loading="lazy" /></div></a>
-          <h3>Another Shift, Another Character Arc</h3>
-          <div class="meta"><span class="price">From $5.75</span><a class="plus" href="/products/another-shift-another-character-arc/" aria-label="Choose a size for Another Shift, Another Character Arc">+</a></div>
         </article>
       </div>
     </section>
