@@ -1,19 +1,10 @@
-/* ms-footer-polish-20261015 — balanced footer columns + depth on brand red */
+/* ms-footer-polish-20261015b — balanced footer columns on solid brand red */
+/* Solid brand red, same as the top announcement banner (#8e2b2a); no gradient, texture or shadow */
 footer, footer.bg-footer {
   background-color: #8e2b2a !important;
-  background-image:
-    radial-gradient(ellipse 70% 120% at 12% 0%, rgba(255,255,255,.10), rgba(255,255,255,0) 60%),
-    radial-gradient(ellipse 60% 90% at 100% 100%, rgba(40,6,6,.28), rgba(40,6,6,0) 65%),
-    linear-gradient(165deg, #9a302e 0%, #8e2b2a 45%, #7a2322 100%) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 -6px 14px -10px rgba(28,25,23,.16);
+  background-image: none !important;
+  box-shadow: none !important;
 }
-footer::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background-image: radial-gradient(rgba(255,255,255,.035) 1px, transparent 1.2px);
-  background-size: 4px 4px;
-}
-footer { position: relative; }
-footer > * { position: relative; z-index: 1; }
 
 /* Homepage footer (.foot): brand | Shop | Help | About, evenly spread (social icons removed) */
 @media (min-width: 981px) {
