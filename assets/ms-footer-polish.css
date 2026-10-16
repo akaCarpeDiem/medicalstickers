@@ -15,16 +15,13 @@ footer::after {
 footer { position: relative; }
 footer > * { position: relative; z-index: 1; }
 
-/* Homepage footer (.foot): brand | Shop | Help | About | social, evenly spread */
+/* Homepage footer (.foot): brand | Shop | Help | About, evenly spread (social icons removed) */
 @media (min-width: 981px) {
-  .foot { grid-template-columns: minmax(0,1.5fr) repeat(3, minmax(0,1fr)) auto !important; gap: 24px 40px !important; align-items: start; }
-  .foot > .news { justify-self: end; }
-  .foot > .news .social { margin-top: 26px; }
+  .foot { grid-template-columns: minmax(0,1.5fr) repeat(3, minmax(0,1fr)) !important; gap: 24px 40px !important; align-items: start; }
 }
 @media (max-width: 980px) {
   .foot > :first-child, .foot > .news { text-align: center; }
   .foot > :first-child .footer-logo { margin-left: auto; margin-right: auto; }
-  .foot > .news .social { justify-content: center; margin-top: 4px; }
 }
 @media (max-width: 520px) {
   .foot { grid-template-columns: 1fr 1fr !important; gap: 20px 16px !important; }
