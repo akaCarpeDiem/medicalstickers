@@ -64,8 +64,9 @@ GA_SNIPPET = """<script>
 </script>"""
 OFFER_EXTRA = {
     "shippingDetails": {"@type": "OfferShippingDetails", "shippingRate": {"@type": "MonetaryAmount", "value": "4.99", "currency": "USD"}, "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"}},
-    # matches Merchant Center (defective items only, 14 days, US) and /returns/
-    "hasMerchantReturnPolicy": {"@type": "MerchantReturnPolicy", "applicableCountry": "US", "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow", "merchantReturnDays": 14, "returnFees": "https://schema.org/FreeReturn", "returnMethod": "https://schema.org/ReturnByMail", "merchantReturnLink": "https://medicalstickers.shop/returns/"},
+    # matches Merchant Center (defective items only, 14 days, US) and /returns/ (customer keeps the item: KeepProduct).
+    # of.update() below replaces the whole policy, so an older ReturnByMail value is converted on every run.
+    "hasMerchantReturnPolicy": {"@type": "MerchantReturnPolicy", "applicableCountry": "US", "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow", "merchantReturnDays": 14, "returnFees": "https://schema.org/FreeReturn", "returnMethod": "https://schema.org/KeepProduct", "merchantReturnLink": "https://medicalstickers.shop/returns/"},
 }
 HOME_CART_BTN = ('<button type="button" class="iconbtn" data-cart-button aria-expanded="false" aria-controls="cart-drawer"><span class="sr">Open cart</span>\n'
     '        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1c1917" stroke-width="1.8" aria-hidden="true"><path d="M6 7h15l-1.5 9h-12z"/><path d="M6 7L5 4H2"/><circle cx="9" cy="20" r="1.3" fill="#1c1917"/><circle cx="17" cy="20" r="1.3" fill="#1c1917"/></svg>\n'
