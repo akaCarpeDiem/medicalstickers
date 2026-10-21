@@ -384,6 +384,7 @@
 <link rel="stylesheet" href="/assets/ms-home-cart.css?v=20261021">
 <link rel="stylesheet" href="/assets/ms-footer-polish.css?v=20261015b">
 <link rel="stylesheet" href="/assets/ms-red-theme.css?v=20261015r">
+<link rel="stylesheet" href="/assets/ms-home-layout.css?v=20261021">
 </head>
 <body>
   <div class="ann">
@@ -415,25 +416,45 @@
     </div>
     </div>
     <nav aria-label="Primary">
+      <a href="/">Home</a>
       <a href="/shop/">Shop</a>
       <div class="drop">
-        <a href="/specialties/">By Department ▾</a>
+        <a href="/specialties/">Specialties ▾</a>
         <div class="menu">
-          <a href="/specialties/emergency/">ER</a>
-          <a href="/specialties/icu/">ICU</a>
-          <a href="/specialties/ems/">EMS</a>
-          <a href="/specialties/lab/">Lab</a>
-          <a href="/specialties/radiology/">Radiology</a>
-          <a href="/specialties/respiratory/">RT</a>
-          <a href="/specialties/pediatrics/">Peds</a>
-          <a href="/specialties/night-shift/">Night Shift</a>
+            <a href="/specialties/">All specialties</a>
+            <a href="/specialties/emergency/">Emergency / ER</a>
+            <a href="/specialties/nursing/">Nursing</a>
+            <a href="/specialties/night-shift/">Night Shift</a>
+            <a href="/specialties/icu/">ICU</a>
+            <a href="/specialties/ems/">EMS / Paramedic</a>
+            <a href="/specialties/respiratory/">Respiratory Therapy</a>
+            <a href="/specialties/lab/">Lab / Phlebotomy</a>
+            <a href="/specialties/radiology/">Radiology / CT / MRI</a>
+            <a href="/specialties/pharmacy/">Pharmacy</a>
+            <a href="/specialties/pediatrics/">Pediatrics</a>
+            <a href="/specialties/ld-nicu/">L&amp;D / NICU</a>
+            <a href="/specialties/or-pacu/">OR / PACU</a>
+            <a href="/specialties/dental/">Dental</a>
+            <a href="/specialties/general/">General Healthcare</a>
         </div>
       </div>
-      <a href="/specialties/">Specialties</a>
-      <a href="#new">New Arrivals</a>
-      <a href="#shop">Best Sellers</a>
-      
+      <div class="drop">
+        <a href="/collections/">Collections ▾</a>
+        <div class="menu">
+            <a href="/collections/">All collections</a>
+            <a href="/collections/dark-humor/">Dark Humor</a>
+            <a href="/collections/skeleton/">Skeleton Series</a>
+            <a href="/collections/retro/">Retro Medical</a>
+            <a href="/collections/minimal/">Minimal</a>
+            <a href="/collections/cute-playful/">Cute / Playful</a>
+            <a href="/collections/anatomy/">Anatomy</a>
+            <a href="/collections/night-shift/">Night Shift</a>
+            <a href="/collections/clinical-sarcasm/">Clinical Sarcasm</a>
+        </div>
+      </div>
+      <a href="/community/">Community</a>
       <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
     </nav>
     </div>
   </header>
@@ -446,14 +467,15 @@
       </form>
       <a class="btn" href="/shop/">Shop all stickers</a>
       <div aria-label="Mobile" class="mobile-links" role="navigation">
+        <a href="/">Home</a>
         <a href="/shop/">Shop</a>
-        <a href="/specialties/">By Department</a>
-        <a href="/specialties/">Specialties</a>
-        <a href="#new">New Arrivals</a>
-        <a href="#shop">Best Sellers</a>
+        <a href="/community/">Community</a>
         <a href="/about/">About</a>
-        <a href="/faq/">FAQ</a>
         <a href="/contact/">Contact</a>
+        <a class="mobile-sub" href="/specialties/">Specialties</a>
+        <div class="mobile-grid"><a href="/specialties/emergency/">ER</a><a href="/specialties/nursing/">Nursing</a><a href="/specialties/night-shift/">Nights</a><a href="/specialties/icu/">ICU</a><a href="/specialties/ems/">EMS</a><a href="/specialties/respiratory/">RT</a><a href="/specialties/lab/">Lab</a><a href="/specialties/radiology/">Radiology</a><a href="/specialties/pharmacy/">Pharmacy</a><a href="/specialties/pediatrics/">Peds</a><a href="/specialties/ld-nicu/">L&amp;D</a><a href="/specialties/or-pacu/">OR</a><a href="/specialties/dental/">Dental</a><a href="/specialties/general/">General</a></div>
+        <p class="mobile-sub">Collections</p>
+        <div class="mobile-grid mobile-grid-1"><a href="/collections/dark-humor/">Dark Humor</a><a href="/collections/skeleton/">Skeleton Series</a><a href="/collections/retro/">Retro Medical</a><a href="/collections/minimal/">Minimal</a><a href="/collections/cute-playful/">Cute / Playful</a><a href="/collections/anatomy/">Anatomy</a><a href="/collections/night-shift/">Night Shift</a><a href="/collections/clinical-sarcasm/">Clinical Sarcasm</a></div>
       </div>
     </div>
   </div>
@@ -596,46 +618,40 @@
     </section>
   </main>
   <footer>
-    <div class="wrap foot">
+    <div class="wrap foot foot-3">
       <div>
         <a href="/" aria-label="Medical Stickers shop home" class="footer-brand">
           <img class="logo-img footer-logo" src="/assets/home/logo-exact.webp" alt="MedicalStickers.shop" width="200" height="118" decoding="async" />
         </a>
-        <p class="tag">Good stickers. Brighter days.</p>
+        <p class="foot-blurb">Stickers for people who get it. All specialties. All shifts.</p>
         <p style="margin:10px 0 0"><a href="/shop/">Shop all stickers</a></p>
       </div>
       <div>
         <h3>Shop</h3>
-        <a href="#shop">Best Sellers</a>
-        <a href="#new">New Arrivals</a>
-        <a href="#departments">By Department</a>
-        <a href="/shop/">All Stickers</a>
+        <a href="/shop/">All stickers</a>
+        <a href="/shop/?badge=bestseller">Best sellers</a>
+        <a href="/shop/?badge=new">Fresh from triage</a>
+        <a href="/specialties/">Specialties</a>
+        <a href="/collections/">Collections</a>
       </div>
       <div>
-        <h3>Help</h3>
-        <a href="/shipping/">Shipping</a>
-        <a href="/returns/">Returns</a>
-        <a href="/faq/">FAQ</a>
-        <a href="/contact/">Contact Us</a>
-      </div>
-      <div>
-        <h3>About</h3>
-        <a href="/about/">Our Story</a>
+        <h3>Visit</h3>
         <a href="/community/">Community</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
       </div>
     </div>
     <div class="wrap">
-      <p class="fine">Secure checkout by Stripe. Printed and shipped by Printful. Novelty stickers, not medical devices. © 2026 MedicalStickers.shop</p>
         <div class="legal-row">
-          <a href="/privacy/">Privacy</a>
-          <a href="/terms/">Terms</a>
+          <a href="/faq/">FAQ</a>
           <a href="/shipping/">Shipping</a>
           <a href="/returns/">Returns</a>
-          <a href="/faq/">FAQ</a>
-          <a href="/contact/">Contact</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
         </div>
+      <p class="fine">© 2026 MedicalStickers.shop. All specialties. All shifts.</p>
+      <p class="fine">Payments are processed securely by Stripe. Stickers are printed to order and shipped by Printful. Designs are independent and are not affiliated with any hospital, health system, school, or brand.</p>
+      <p class="fine">Every design comes as a die-cut satin vinyl sticker in 3″ × 3″ ($5.75) or 4″ × 4″ ($6.50). Free U.S. shipping on orders $25+.</p>
     </div>
   </footer>
   <div class="toast" data-toast role="status"></div>

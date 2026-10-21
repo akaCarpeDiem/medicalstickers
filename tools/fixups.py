@@ -136,6 +136,86 @@ def oct21_fixes():
 import sys
 if '--oct21-only' in sys.argv:
     oct21_fixes(); sys.exit(0)
+# ---- Bigger ideas (2026-10-21, preview first): bottle mockup on product pages, one-line "who it's for" descriptions,
+# ---- free-shipping nudge, phone hero order (CSS), homepage header/footer links matching every other page.
+def _nav_lists(shop):
+    def links(panel_start):
+        i = shop.find(panel_start); j = shop.find('</div>', shop.find('<div class="nav-panel">', i))
+        return re.findall(r'<a class="block rounded-lg[^"]*" href="([^"]+)">([^<]+)</a>', shop[i:j])
+    spec = links('nav-drop-label">Specialties'); coll = links('<summary class="rounded-full px-2.5 py-2 text-sm font-medium hover:bg-card">Collections')
+    i = shop.find('<div id="mobile-nav"'); j = shop.find('</header>', i)
+    mob_spec = re.findall(r'<a class="rounded-xl px-2 py-2 text-sm hover:bg-card" href="(/specialties/[^"]+)">([^<]+)</a>', shop[i:j])
+    assert len(spec) > 10 and len(coll) > 5 and len(mob_spec) > 10, (len(spec), len(coll), len(mob_spec))
+    return spec, coll, mob_spec
+def bigger_ideas():
+    import os, math
+    E2 = lambda t: html.escape(t, quote=True)
+    desc = json.load(open('tools/descriptions.json'))
+    cat = json.load(open('tools/catalog.json')); by_slug = {p['slug']: p for p in cat}
+    # free-shipping nudge from the real numbers: functions/lib/stripe.ts threshold (free at >= threshold) and the cheapest variant
+    m = re.search(r'FREE_SHIPPING_MIN_CENTS\s*=\s*(\d+)', open('functions/lib/stripe.ts').read()); free_min = int(m.group(1))
+    cheapest = min(round(v['price'] * 100) for p in cat for v in p['variants'])
+    n_min = math.ceil(free_min / cheapest)
+    nudge = f'Free U.S. shipping on orders over ${free_min // 100}. Grab {n_min} or more.'
+    shop = open('shop/index.html').read(); spec, coll, mob_spec = _nav_lists(shop)
+    for f in glob.glob('products/*/index.html'):
+        slug = f.split('/')[1]; prod = by_slug[slug]; line = desc[slug]; s = o = open(f).read()
+        title = prod['title']; sizes = ' or '.join(v['size'] for v in prod['variants'])
+        # 1. bottle mockup as a second gallery image
+        if 'data-bottle-mockup' not in s:
+            assert os.path.exists(f'stickers/bottle/{slug}.webp'), slug
+            mm = re.search(r'<div class="rounded-3xl border border-line bg-card p-6 sm:p-10"><img src="/stickers/' + re.escape(slug) + r'\.webp"[^>]*></div>', s); assert mm, f
+            fig = (f'<figure class="overflow-hidden rounded-3xl border border-line bg-card" data-bottle-mockup><img src="/stickers/bottle/{slug}.webp" '
+                   f'alt="{E2(title)} sticker on a green water bottle (mockup)" width="800" height="800" loading="lazy" decoding="async" class="block w-full">'
+                   f'<figcaption class="px-4 py-3 text-sm text-muted">Mockup on a water bottle. Comes in {sizes}.</figcaption></figure>')
+            s = s[:mm.start()] + '<div class="grid gap-4">' + mm.group(0) + fig + '</div>' + s[mm.end():]
+        # 3. free-shipping nudge under the price
+        s = re.sub(r'<p class="mt-1 text-sm font-semibold text-ink" data-ship-nudge>.*?</p>', '', s)
+        s = re.sub(r'(<p class="mt-4 text-2xl font-semibold text-red" data-price-display>[^<]*</p>)', lambda mm: mm.group(1) + f'<p class="mt-1 text-sm font-semibold text-ink" data-ship-nudge>{E2(nudge)}</p>', s, count=1)
+        # 2. one-line "who it's for" description: visible copy + JSON-LD keep the template sentence after it; meta gets the line + short facts
+        s = re.sub(r'(<p class="mt-4 max-w-xl leading-relaxed text-muted">)(.*?)(</p>)', lambda mm: mm.group(1) + (mm.group(2) if mm.group(2).startswith(E2(line)) else E2(line) + ' ' + mm.group(2)) + mm.group(3), s, count=1, flags=re.S)
+        short = f'{line} Die-cut satin vinyl sticker in {sizes}.'
+        for attr in ['name="description"', 'property="og:description"', 'name="twitter:description"']:
+            s = re.sub(r'(<meta ' + re.escape(attr) + r' content=")[^"]*(")', lambda mm: mm.group(1) + E2(short) + mm.group(2), s, count=1)
+        def ld(mm):
+            d = json.loads(mm.group(1))
+            if d.get('@type') == 'Product' and not d['description'].startswith(line): d['description'] = line + ' ' + d['description']
+            return '<script type="application/ld+json">' + json.dumps(d, ensure_ascii=False).replace('</', '<\\/') + '</script>'
+        s = re.sub(r'<script type="application/ld\+json">(.*?)</script>', ld, s, flags=re.S)
+        if s != o: open(f, 'w').write(s)
+    # homepage: same menu items, mobile links and footer columns as every other page; phone hero order via CSS
+    f = 'index.html'; s = o = open(f).read()
+    dd = lambda items: ''.join(f'\n            <a href="{h}">{t}</a>' for h, t in items)
+    nav = ('<nav aria-label="Primary">\n      <a href="/">Home</a>\n      <a href="/shop/">Shop</a>\n'
+           f'      <div class="drop">\n        <a href="/specialties/">Specialties ▾</a>\n        <div class="menu">{dd(spec)}\n        </div>\n      </div>\n'
+           f'      <div class="drop">\n        <a href="/collections/">Collections ▾</a>\n        <div class="menu">{dd(coll)}\n        </div>\n      </div>\n'
+           '      <a href="/community/">Community</a>\n      <a href="/about/">About</a>\n      <a href="/contact/">Contact</a>\n    </nav>')
+    s = re.sub(r'<nav aria-label="Primary">.*?</nav>', lambda mm: nav, s, count=1, flags=re.S)
+    mob = ('<div aria-label="Mobile" class="mobile-links" role="navigation">\n        <a href="/">Home</a>\n        <a href="/shop/">Shop</a>\n        <a href="/community/">Community</a>\n        <a href="/about/">About</a>\n        <a href="/contact/">Contact</a>\n'
+           '        <a class="mobile-sub" href="/specialties/">Specialties</a>\n        <div class="mobile-grid">' + ''.join(f'<a href="{h}">{t}</a>' for h, t in mob_spec) + '</div>\n'
+           '        <p class="mobile-sub">Collections</p>\n        <div class="mobile-grid mobile-grid-1">' + ''.join(f'<a href="{h}">{t}</a>' for h, t in coll if h != '/collections/') + '</div>\n      </div>')
+    s = re.sub(r'<div aria-label="Mobile" class="mobile-links" role="navigation">.*?\n      </div>', lambda mm: mob, s, count=1, flags=re.S)
+    fi = shop.find('<footer'); fj = shop.find('</footer>', fi); sf = shop[fi:fj]
+    blurb = re.search(r'<p class="mt-4 max-w-sm[^"]*">(.*?)</p>', sf).group(1)
+    shop_col = re.findall(r'<li><a class="hover:underline" href="([^"]+)">([^<]+)</a></li>', sf[sf.find('>Shop</h2>'):sf.find('</ul>', sf.find('>Shop</h2>'))])
+    visit_col = re.findall(r'<li><a class="hover:underline" href="([^"]+)">([^<]+)</a></li>', sf[sf.find('>Visit</h2>'):sf.find('</ul>', sf.find('>Visit</h2>'))])
+    legal = re.findall(r'<li><a class="hover:underline" href="([^"]+)">([^<]+)</a></li>', sf[sf.find('<ul class="flex flex-wrap gap-x-4 gap-y-2">'):sf.find('</ul>', sf.find('<ul class="flex flex-wrap gap-x-4 gap-y-2">'))])
+    fine = re.findall(r'<p>(.*?)</p>', sf[sf.find('text-footer-ink/70'):])
+    col = lambda name, items: f'      <div>\n        <h3>{name}</h3>' + ''.join(f'\n        <a href="{h}">{t}</a>' for h, t in items) + '\n      </div>\n'
+    logo = re.search(r'<a href="/" aria-label="Medical Stickers shop home" class="footer-brand">.*?</a>', s, re.S).group(0)
+    foot = ('<div class="wrap foot foot-3">\n      <div>\n        ' + logo + f'\n        <p class="foot-blurb">{blurb}</p>\n        <p style="margin:10px 0 0"><a href="/shop/">Shop all stickers</a></p>\n      </div>\n'
+            + col('Shop', shop_col) + col('Visit', visit_col) + '    </div>\n    <div class="wrap">\n        <div class="legal-row">' + ''.join(f'\n          <a href="{h}">{t}</a>' for h, t in legal)
+            + '\n        </div>' + ''.join(f'\n      <p class="fine">{t}</p>' for t in fine) + '\n    </div>\n  ')
+    i = s.find('<footer>'); j = s.find('</footer>', i); assert i > 0 and j > 0
+    s = s[:i + len('<footer>')] + '\n    ' + foot + s[j:]
+    if 'ms-home-layout.css' not in s:
+        s = s.replace('<link rel="stylesheet" href="/assets/ms-red-theme.css', '<link rel="stylesheet" href="/assets/ms-home-layout.css?v=20261021">\n<link rel="stylesheet" href="/assets/ms-red-theme.css', 1)
+        # red theme stays last
+        s = s.replace('<link rel="stylesheet" href="/assets/ms-home-layout.css?v=20261021">\n<link rel="stylesheet" href="/assets/ms-red-theme.css?v=20261015r">', '<link rel="stylesheet" href="/assets/ms-red-theme.css?v=20261015r">\n<link rel="stylesheet" href="/assets/ms-home-layout.css?v=20261021">', 1)
+    if s != o: open(f, 'w').write(s)
+    print('bigger ideas done')
+if '--bigger-only' in sys.argv:
+    bigger_ideas(); sys.exit(0)
 for f in glob.glob('**/*.html', recursive=True):
     s = open(f).read(); o = s
     for a, b in R: s = a.sub(b, s) if hasattr(a, 'sub') else s.replace(a, b)
@@ -163,4 +243,5 @@ s = s.replace('/cart/"', '/thanks/"')
 if '<meta name="robots"' not in s: s = s.replace('</head>', '<meta name="robots" content="noindex"></head>', 1)
 import os; os.makedirs('thanks', exist_ok=True); open('thanks/index.html', 'w').write(s)
 oct21_fixes()  # last, so the thanks page built above gets the same changes
+bigger_ideas()
 print('fixups done')
