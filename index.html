@@ -5,9 +5,11 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  var msConsent = null; try { msConsent = localStorage.getItem('ms-consent'); } catch (e) {}
+  gtag('consent', 'default', { analytics_storage: msConsent === 'all' ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
   gtag('js', new Date());
-
   gtag('config', 'G-Y6495SSEDC', { page_location: location.origin + location.pathname, page_referrer: document.referrer.split('?')[0] });
+  document.addEventListener('click', function (e) { var b = e.target.closest && e.target.closest('[data-consent="all"]'); if (b) gtag('consent', 'update', { analytics_storage: 'granted' }); });
 </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -379,6 +381,7 @@
     @media (max-width: 520px) { .cards, .arrivals { grid-template-columns:repeat(2, minmax(0, 1fr)) !important; gap:10px !important; } }
   </style>
 <link rel="preload" as="image" href="/assets/hero-bottle/first-frame.jpg">
+<link rel="stylesheet" href="/assets/ms-home-cart.css?v=20261021">
 <link rel="stylesheet" href="/assets/ms-footer-polish.css?v=20261015b">
 <link rel="stylesheet" href="/assets/ms-red-theme.css?v=20261015r">
 </head>
@@ -395,7 +398,7 @@
   <header>
         <div class="header-inner">
       <a class="brand logo-sticker" href="/" aria-label="Medical Stickers shop home">
-      <img class="logo-img" src="/assets/home/logo-exact.png" alt="MedicalStickers.shop" width="200" height="118" decoding="async" />
+      <img class="logo-img" src="/assets/home/logo-exact.webp" alt="MedicalStickers.shop" width="200" height="118" decoding="async" />
     </a>
       <div class="header-tools">
     <form class="search" role="search" action="/shop" method="get">
@@ -404,13 +407,10 @@
       <input id="q" name="q" data-search type="search" placeholder="Search stickers..." />
     </form>
     <div class="icons">
-      <a class="iconbtn icon-account" href="/account/" aria-label="Account">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1c1917" stroke-width="1.8"><circle cx="12" cy="8" r="3.2"/><path d="M5 19c1.6-3 4-4.5 7-4.5S17.4 16 19 19"/></svg>
-      </a>
-      <a class="iconbtn" href="/shop/" aria-label="Shop stickers">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1c1917" stroke-width="1.8"><path d="M6 7h15l-1.5 9h-12z"/><path d="M6 7L5 4H2"/><circle cx="9" cy="20" r="1.3" fill="#1c1917"/><circle cx="17" cy="20" r="1.3" fill="#1c1917"/></svg>
-        <span class="badge" id="cart-count">0</span>
-      </a>
+      <button type="button" class="iconbtn" data-cart-button aria-expanded="false" aria-controls="cart-drawer"><span class="sr">Open cart</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1c1917" stroke-width="1.8" aria-hidden="true"><path d="M6 7h15l-1.5 9h-12z"/><path d="M6 7L5 4H2"/><circle cx="9" cy="20" r="1.3" fill="#1c1917"/><circle cx="17" cy="20" r="1.3" fill="#1c1917"/></svg>
+        <span class="badge hidden" data-cart-count></span>
+      </button>
       <button type="button" class="menu-toggle" data-menu-button aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">Menu</button>
     </div>
     </div>
@@ -454,7 +454,6 @@
         <a href="/about/">About</a>
         <a href="/faq/">FAQ</a>
         <a href="/contact/">Contact</a>
-        <a href="/account/">Account</a>
       </div>
     </div>
   </div>
@@ -585,7 +584,7 @@
 
     <section class="wrap about" id="about">
       <div class="about-photo">
-        <img src="/assets/home/about-be-a-nurse-they-said.png" alt="Be a nurse, they said. It'll be fun, they said. Skeleton nurse sticker" width="360" height="425" />
+        <img src="/assets/home/about-be-a-nurse-they-said.webp" alt="Be a nurse, they said. It'll be fun, they said. Skeleton nurse sticker" width="360" height="425" loading="lazy" />
       </div>
       <div>
         <p class="eyebrow">More than stickers</p>
@@ -600,7 +599,7 @@
     <div class="wrap foot">
       <div>
         <a href="/" aria-label="Medical Stickers shop home" class="footer-brand">
-          <img class="logo-img footer-logo" src="/assets/home/logo-exact.png" alt="MedicalStickers.shop" width="200" height="118" decoding="async" />
+          <img class="logo-img footer-logo" src="/assets/home/logo-exact.webp" alt="MedicalStickers.shop" width="200" height="118" decoding="async" />
         </a>
         <p class="tag">Good stickers. Brighter days.</p>
         <p style="margin:10px 0 0"><a href="/shop/">Shop all stickers</a></p>
@@ -694,7 +693,8 @@
         document.body.classList.remove('menu-open');
       }
     }
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click', function (e) {
+      e.stopImmediatePropagation();
       setOpen(panel.hidden);
     });
     panel.addEventListener('click', function (e) {
@@ -727,5 +727,9 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
   })();
 </script>
+<div id="cart-drawer" data-cart-drawer hidden class="fixed inset-0 z-50" role="dialog" aria-modal="true" aria-labelledby="cart-title"><button type="button" class="absolute inset-0 bg-ink/40" data-cart-close aria-label="Close cart"></button><div class="absolute top-0 right-0 flex h-full w-full max-w-md flex-col bg-ivory shadow-2xl"><div class="flex items-center justify-between border-b border-line px-5 py-4"><h2 id="cart-title" class="font-serif text-2xl">Cart</h2><button type="button" class="rounded-full px-3 py-2 text-sm font-semibold hover:bg-card" data-cart-close>Close</button></div><div class="flex-1 overflow-auto px-5 py-4" data-cart-body></div><div class="border-t border-line px-5 py-4" data-cart-footer></div></div></div>
+<div data-cookie hidden class="fixed inset-x-0 bottom-0 z-40 p-3 sm:p-4" role="dialog" aria-label="Cookie notice"><div class="container-shop flex flex-col gap-3 rounded-2xl border border-line bg-white p-4 shadow-lg sm:flex-row sm:items-center sm:justify-between"><p class="text-sm leading-relaxed text-muted">We use Google Analytics cookies to count visits and store your cookie choice on this device. No ad pixels run. See the <a class="font-semibold text-red underline" href="/privacy/">privacy policy</a>.</p><div class="flex shrink-0 gap-2"><button type="button" class="btn btn-secondary" data-consent="essential">Essential only</button><button type="button" class="btn btn-primary" data-consent="all">Accept</button></div></div></div>
+<script id="shop-config" type="application/json">{"directEnabled":true,"checkoutEndpoint":"/api/checkout","newsletterPreview":true,"products":[{"slug":"clinically-tired","title":"Clinically Tired","image":"/stickers/clinically-tired-400.webp","variants":[{"id":5569500768,"size":"3″ × 3″","price":5.75},{"id":5569500770,"size":"4″ × 4″","price":6.5}]},{"slug":"ive-seen-worse-vitals","title":"I've Seen Worse Vitals","image":"/stickers/ive-seen-worse-vitals-400.webp","variants":[{"id":5569501016,"size":"3″ × 3″","price":5.75},{"id":5569501017,"size":"4″ × 4″","price":6.5}]},{"slug":"labs-pending-sanity-also-pending","title":"Labs Pending, Sanity Also Pending","image":"/stickers/labs-pending-sanity-also-pending-400.webp","variants":[{"id":5569501117,"size":"3″ × 3″","price":5.75},{"id":5569501119,"size":"4″ × 4″","price":6.5}]},{"slug":"the-sun-is-up-i-should-not-be","title":"The Sun Is Up, I Should Not Be","image":"/stickers/the-sun-is-up-i-should-not-be-400.webp","variants":[{"id":5569501632,"size":"3″ × 3″","price":5.75},{"id":5569501633,"size":"4″ × 4″","price":6.5}]},{"slug":"npo-until-further-emotional-notice","title":"NPO Until Further Emotional Notice","image":"/stickers/npo-until-further-emotional-notice-400.webp","variants":[{"id":5569501764,"size":"3″ × 3″","price":5.75},{"id":5569501765,"size":"4″ × 4″","price":6.5}]},{"slug":"running-on-caffeine-clinical-judgment","title":"Running on Caffeine & Clinical Judgment","image":"/stickers/running-on-caffeine-clinical-judgment-400.webp","variants":[{"id":5569502285,"size":"3″ × 3″","price":5.75},{"id":5569502291,"size":"4″ × 4″","price":6.5}]},{"slug":"patient-stable-nurse-buffering","title":"Patient: Stable. Nurse: Buffering","image":"/stickers/patient-stable-nurse-buffering-400.webp","variants":[{"id":5569502423,"size":"3″ × 3″","price":5.75},{"id":5569502425,"size":"4″ × 4″","price":6.5}]},{"slug":"discharge-is-my-love-language","title":"Discharge Is My Love Language","image":"/stickers/discharge-is-my-love-language-400.webp","variants":[{"id":5569503182,"size":"3″ × 3″","price":5.75},{"id":5569503183,"size":"4″ × 4″","price":6.5}]},{"slug":"professionally-concerned","title":"Professionally Concerned","image":"/stickers/professionally-concerned-400.webp","variants":[{"id":5569503539,"size":"3″ × 3″","price":5.75},{"id":5569503540,"size":"4″ × 4″","price":6.5}]},{"slug":"but-did-you-die","title":"But Did You Die?","image":"/stickers/but-did-you-die-400.webp","variants":[{"id":5569503717,"size":"3″ × 3″","price":5.75},{"id":5569503718,"size":"4″ × 4″","price":6.5}]},{"slug":"did-you-ask-about-our-turkey-sandwiches","title":"Did You Ask About Our Turkey Sandwiches?","image":"/stickers/did-you-ask-about-our-turkey-sandwiches-400.webp","variants":[{"id":5569503986,"size":"3″ × 3″","price":5.75},{"id":5569503987,"size":"4″ × 4″","price":6.5}]},{"slug":"night-shift-gremlin","title":"Night Shift Gremlin","image":"/stickers/night-shift-gremlin-400.webp","variants":[{"id":5569504069,"size":"3″ × 3″","price":5.75},{"id":5569504070,"size":"4″ × 4″","price":6.5}]},{"slug":"do-not-disturb-until-0700","title":"Do Not Disturb Until 0700","image":"/stickers/do-not-disturb-until-0700-400.webp","variants":[{"id":5569505045,"size":"3″ × 3″","price":5.75},{"id":5569505047,"size":"4″ × 4″","price":6.5}]},{"slug":"tiny-humans-big-feelings","title":"Tiny Humans, Big Feelings","image":"/stickers/tiny-humans-big-feelings-400.webp","variants":[{"id":5569505469,"size":"3″ × 3″","price":5.75},{"id":5569505471,"size":"4″ × 4″","price":6.5}]},{"slug":"powered-by-caffeine-questionable-staffing","title":"Powered by Caffeine & Questionable Staffing","image":"/stickers/powered-by-caffeine-questionable-staffing-400.webp","variants":[{"id":5569506679,"size":"3″ × 3″","price":5.75},{"id":5569506680,"size":"4″ × 4″","price":6.5}]},{"slug":"sinus-rhythm-is-my-love-language","title":"Sinus Rhythm Is My Love Language","image":"/stickers/sinus-rhythm-is-my-love-language-400.webp","variants":[{"id":5569506800,"size":"3″ × 3″","price":5.75},{"id":5569506801,"size":"4″ × 4″","price":6.5}]},{"slug":"scrubs-on-game-face-activated","title":"Scrubs On, Game Face Activated","image":"/stickers/scrubs-on-game-face-activated-400.webp","variants":[{"id":5569507652,"size":"3″ × 3″","price":5.75},{"id":5569507657,"size":"4″ × 4″","price":6.5}]},{"slug":"healing-is-messy-but-beautiful","title":"Healing Is Messy but Beautiful","image":"/stickers/healing-is-messy-but-beautiful-400.webp","variants":[{"id":5569507940,"size":"3″ × 3″","price":5.75},{"id":5569507943,"size":"4″ × 4″","price":6.5}]},{"slug":"compassion-in-every-beat","title":"Compassion in Every Beat","image":"/stickers/compassion-in-every-beat-400.webp","variants":[{"id":5569508462,"size":"3″ × 3″","price":5.75},{"id":5569508463,"size":"4″ × 4″","price":6.5}]},{"slug":"mental-health-matters-too","title":"Mental Health Matters Too","image":"/stickers/mental-health-matters-too-400.webp","variants":[{"id":5569508662,"size":"3″ × 3″","price":5.75},{"id":5569508663,"size":"4″ × 4″","price":6.5}]},{"slug":"breathe-you-got-this","title":"Breathe, You Got This","image":"/stickers/breathe-you-got-this-400.webp","variants":[{"id":5569508950,"size":"3″ × 3″","price":5.75},{"id":5569508952,"size":"4″ × 4″","price":6.5}]},{"slug":"some-heroes-wear-scrubs","title":"Some Heroes Wear Scrubs","image":"/stickers/some-heroes-wear-scrubs-400.webp","variants":[{"id":5569509155,"size":"3″ × 3″","price":5.75},{"id":5569509156,"size":"4″ × 4″","price":6.5}]},{"slug":"medication-rights","title":"Medication Rights","image":"/stickers/medication-rights-400.webp","variants":[{"id":5569510291,"size":"3″ × 3″","price":5.75},{"id":5569510292,"size":"4″ × 4″","price":6.5}]},{"slug":"trauma-team-snack-crew","title":"Trauma Team Snack Crew","image":"/stickers/trauma-team-snack-crew-400.webp","variants":[{"id":5569510474,"size":"3″ × 3″","price":5.75},{"id":5569510475,"size":"4″ × 4″","price":6.5}]},{"slug":"rad-people-keep-people-alive","title":"Rad People Keep People Alive","image":"/stickers/rad-people-keep-people-alive-400.webp","variants":[{"id":5569510978,"size":"3″ × 3″","price":5.75},{"id":5569510983,"size":"4″ × 4″","price":6.5}]},{"slug":"lab-life","title":"Lab Life","image":"/stickers/lab-life-400.webp","variants":[{"id":5569511073,"size":"3″ × 3″","price":5.75},{"id":5569511074,"size":"4″ × 4″","price":6.5}]},{"slug":"rt-breathing-room-expert","title":"RT: Breathing Room Expert","image":"/stickers/rt-breathing-room-expert-400.webp","variants":[{"id":5569511519,"size":"3″ × 3″","price":5.75},{"id":5569511520,"size":"4″ × 4″","price":6.5}]},{"slug":"pharmacy-tiny-doses-big-consequences","title":"Pharmacy: Tiny Doses, Big Consequences","image":"/stickers/pharmacy-tiny-doses-big-consequences-400.webp","variants":[{"id":5569511615,"size":"3″ × 3″","price":5.75},{"id":5569511619,"size":"4″ × 4″","price":6.5}]},{"slug":"peds-mode-stickers-fix-everything","title":"Peds Mode: Stickers Fix Everything","image":"/stickers/peds-mode-stickers-fix-everything-400.webp","variants":[{"id":5569512215,"size":"3″ × 3″","price":5.75},{"id":5569512216,"size":"4″ × 4″","price":6.5}]},{"slug":"slightly-caffeinated-mostly-functional","title":"Slightly Caffeinated, Mostly Functional","image":"/stickers/slightly-caffeinated-mostly-functional-400.webp","variants":[{"id":5569512561,"size":"3″ × 3″","price":5.75},{"id":5569512562,"size":"4″ × 4″","price":6.5}]},{"slug":"scrubs-have-pockets-for-a-reason","title":"Scrubs Have Pockets for a Reason","image":"/stickers/scrubs-have-pockets-for-a-reason-400.webp","variants":[{"id":5569513415,"size":"3″ × 3″","price":5.75},{"id":5569513417,"size":"4″ × 4″","price":6.5}]},{"slug":"runs-on-caffeine-and-good-intentions","title":"Runs on Caffeine and Good Intentions","image":"/stickers/runs-on-caffeine-and-good-intentions-400.webp","variants":[{"id":5569513606,"size":"3″ × 3″","price":5.75},{"id":5569513608,"size":"4″ × 4″","price":6.5}]},{"slug":"meds-memes-miracles","title":"Meds, Memes & Miracles","image":"/stickers/meds-memes-miracles-400.webp","variants":[{"id":5569514412,"size":"3″ × 3″","price":5.75},{"id":5569514420,"size":"4″ × 4″","price":6.5}]},{"slug":"small-sticker-big-cope","title":"Small Sticker, Big Cope","image":"/stickers/small-sticker-big-cope-400.webp","variants":[{"id":5569514782,"size":"3″ × 3″","price":5.75},{"id":5569514789,"size":"4″ × 4″","price":6.5}]},{"slug":"another-shift-another-character-arc","title":"Another Shift, Another Character Arc","image":"/stickers/another-shift-another-character-arc-400.webp","variants":[{"id":5569515853,"size":"3″ × 3″","price":5.75},{"id":5569515859,"size":"4″ × 4″","price":6.5}]},{"slug":"its-fine-im-fine-everythings-fine","title":"It's Fine. I'm Fine. Everything's Fine.","image":"/stickers/its-fine-im-fine-everythings-fine-400.webp","variants":[{"id":5569516030,"size":"3″ × 3″","price":5.75},{"id":5569516031,"size":"4″ × 4″","price":6.5}]},{"slug":"ama-form-ready","title":"AMA Form Ready","image":"/stickers/ama-form-ready-400.webp","variants":[{"id":5569516698,"size":"3″ × 3″","price":5.75},{"id":5569516699,"size":"4″ × 4″","price":6.5}]},{"slug":"another-day-another-10-10-pain","title":"Another Day, Another 10/10 Pain","image":"/stickers/another-day-another-10-10-pain-400.webp","variants":[{"id":5569517207,"size":"3″ × 3″","price":5.75},{"id":5569517209,"size":"4″ × 4″","price":6.5}]},{"slug":"night-shift-unsupervised-after-midnight","title":"Night Shift: Unsupervised After Midnight","image":"/stickers/night-shift-unsupervised-after-midnight-400.webp","variants":[{"id":5569518084,"size":"3″ × 3″","price":5.75},{"id":5569518085,"size":"4″ × 4″","price":6.5}]},{"slug":"no-worries-just-worse-vitals","title":"No Worries, Just Worse Vitals","image":"/stickers/no-worries-just-worse-vitals-400.webp","variants":[{"id":5569518365,"size":"3″ × 3″","price":5.75},{"id":5569518366,"size":"4″ × 4″","price":6.5}]},{"slug":"dead-tired-but-still-charting","title":"Dead Tired but Still Charting","image":"/stickers/dead-tired-but-still-charting-400.webp","variants":[{"id":5569518958,"size":"3″ × 3″","price":5.75},{"id":5569518959,"size":"4″ × 4″","price":6.5}]},{"slug":"charts-coffee-chaos-care","title":"Charts. Coffee. Chaos. Care.","image":"/stickers/charts-coffee-chaos-care-400.webp","variants":[{"id":5569519231,"size":"3″ × 3″","price":5.75},{"id":5569519232,"size":"4″ × 4″","price":6.5}]},{"slug":"difficult-patients-build-character","title":"Difficult Patients Build Character","image":"/stickers/difficult-patients-build-character-400.webp","variants":[{"id":5569522167,"size":"3″ × 3″","price":5.75},{"id":5569522168,"size":"4″ × 4″","price":6.5}]},{"slug":"i-came-i-saw-i-triaged","title":"I Came. I Saw. I Triaged.","image":"/stickers/i-came-i-saw-i-triaged-400.webp","variants":[{"id":5569524125,"size":"3″ × 3″","price":5.75},{"id":5569524126,"size":"4″ × 4″","price":6.5}]},{"slug":"probably-fine","title":"Probably Fine","image":"/stickers/probably-fine-400.webp","variants":[{"id":5569524563,"size":"3″ × 3″","price":5.75},{"id":5569524566,"size":"4″ × 4″","price":6.5}]},{"slug":"same-chaos-bigger-stickers","title":"Same Chaos, Bigger Stickers","image":"/stickers/same-chaos-bigger-stickers-400.webp","variants":[{"id":5569526186,"size":"3″ × 3″","price":5.75},{"id":5569526187,"size":"4″ × 4″","price":6.5}]}]}</script>
+<script type="module" src="/_astro/site-cart.v2.js"></script>
 </body>
 </html>

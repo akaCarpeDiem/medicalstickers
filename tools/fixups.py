@@ -51,6 +51,91 @@ def swap_div(s, opener, inner):
     for m in re.finditer(r'<div\b|</div>', s[st:]):
         d += 1 if m.group(0) == '<div' else -1
         if d == 0: return s[:st] + '\n' + inner + '      ' + s[st + m.start():]
+# ---- 2026-10-21: homepage cart, no Account links, GA consent mode, WebP images, per-sticker share images,
+# ---- Night Shift collection title, shipping/returns in Product JSON-LD. Idempotent; runs last (also: --oct21-only).
+GA_SNIPPET = """<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var msConsent = null; try { msConsent = localStorage.getItem('ms-consent'); } catch (e) {}
+  gtag('consent', 'default', { analytics_storage: msConsent === 'all' ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+  gtag('js', new Date());
+  gtag('config', 'G-Y6495SSEDC', { page_location: location.origin + location.pathname, page_referrer: document.referrer.split('?')[0] });
+  document.addEventListener('click', function (e) { var b = e.target.closest && e.target.closest('[data-consent="all"]'); if (b) gtag('consent', 'update', { analytics_storage: 'granted' }); });
+</script>"""
+OFFER_EXTRA = {
+    "shippingDetails": {"@type": "OfferShippingDetails", "shippingRate": {"@type": "MonetaryAmount", "value": "4.99", "currency": "USD"}, "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"}},
+    "hasMerchantReturnPolicy": {"@type": "MerchantReturnPolicy", "applicableCountry": "US", "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"},
+}
+HOME_CART_BTN = ('<button type="button" class="iconbtn" data-cart-button aria-expanded="false" aria-controls="cart-drawer"><span class="sr">Open cart</span>\n'
+    '        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1c1917" stroke-width="1.8" aria-hidden="true"><path d="M6 7h15l-1.5 9h-12z"/><path d="M6 7L5 4H2"/><circle cx="9" cy="20" r="1.3" fill="#1c1917"/><circle cx="17" cy="20" r="1.3" fill="#1c1917"/></svg>\n'
+    '        <span class="badge hidden" data-cart-count></span>\n      </button>')
+def _between(s, start, end_marker):
+    i = s.find(start); assert i >= 0, start
+    j = s.find(end_marker, i); assert j >= 0, end_marker
+    return s[i:j + len(end_marker)]
+def oct21_fixes():
+    import os
+    shop = open('shop/index.html').read()
+    drawer = _between(shop, '<div id="cart-drawer"', '</div></div></div>')          # backdrop + panel
+    cookie = _between(shop, '<div data-cookie', '</div></div></div>')
+    config = _between(shop, '<script id="shop-config" type="application/json">', '</script>')
+    loader = '<script type="module" src="/_astro/site-cart.v2.js"></script>'
+    assert loader in shop
+    for f in glob.glob('**/*.html', recursive=True):
+        s = open(f).read(); o = s
+        # 3. GA follows the cookie choice (gtag/js loader left as is)
+        s = re.sub(r"<script>\s*window\.dataLayer = window\.dataLayer \|\| \[\];.*?gtag\('config', 'G-Y6495SSEDC'.*?</script>", lambda m: GA_SNIPPET, s, count=1, flags=re.S)
+        # 2. no Account links (the /account/ page stays, noindex)
+        s = re.sub(r'\s*<a class="iconbtn icon-account" href="/account/"[^>]*>.*?</a>', '', s, flags=re.S)
+        s = s.replace('<a class="rounded-xl px-2 py-2 hover:bg-card" href="/account/">Account</a>', '')
+        s = s.replace('<li><a class="hover:underline" href="/account/">Account</a></li>', '')
+        s = re.sub(r'\n[ \t]*<a href="/account/">Account</a>', '', s)
+        # 4. WebP logo (PNG kept on disk)
+        s = s.replace('src="/assets/home/logo-exact.png"', 'src="/assets/home/logo-exact.webp"')
+        if f == 'account/index.html' and '<meta name="robots"' not in s:
+            s = s.replace('</head>', '<meta name="robots" content="noindex"></head>', 1)
+        if f == 'index.html':
+            # 1. homepage cart works like every other page
+            s = re.sub(r'<a class="iconbtn" href="/shop/" aria-label="Shop stickers">.*?<span class="badge" id="cart-count">0</span>\s*</a>', lambda m: HOME_CART_BTN, s, flags=re.S)
+            if 'ms-home-cart.css' not in s:
+                s = s.replace('<link rel="stylesheet" href="/assets/ms-footer-polish.css', '<link rel="stylesheet" href="/assets/ms-home-cart.css?v=20261021">\n<link rel="stylesheet" href="/assets/ms-footer-polish.css', 1)
+            s = re.sub(r'\n?<div id="cart-drawer".*?</div></div></div>', '', s, flags=re.S)
+            s = re.sub(r'\n?<div data-cookie.*?</div></div></div>', '', s, flags=re.S)
+            s = re.sub(r'\n?<script id="shop-config" type="application/json">.*?</script>', '', s, flags=re.S)
+            s = s.replace('\n' + loader, '')
+            s = s.replace('</body>', '\n'.join([drawer, cookie, config, loader]) + '\n</body>', 1)
+            # the homepage's own menu script runs first; stop the cart script's menu handler from toggling it straight back
+            s = s.replace("btn.addEventListener('click', function () {\n      setOpen(panel.hidden);", "btn.addEventListener('click', function (e) {\n      e.stopImmediatePropagation();\n      setOpen(panel.hidden);")
+            # 4. lighter About image
+            s = s.replace('<img src="/assets/home/about-be-a-nurse-they-said.png" alt="Be a nurse, they said. It\'ll be fun, they said. Skeleton nurse sticker" width="360" height="425" />',
+                          '<img src="/assets/home/about-be-a-nurse-they-said.webp" alt="Be a nurse, they said. It\'ll be fun, they said. Skeleton nurse sticker" width="360" height="425" loading="lazy" />')
+        m = re.fullmatch(r'products/([^/]+)/index\.html', f)
+        if m:
+            slug = m.group(1); assert os.path.exists(f'og/{slug}.jpg'), f'missing share image og/{slug}.jpg'
+            img = f'https://medicalstickers.shop/og/{slug}.jpg'
+            # 5. per-sticker share image
+            s = s.replace('<meta property="og:image" content="https://medicalstickers.shop/og.png">', f'<meta property="og:image" content="{img}">')
+            s = s.replace('<meta name="twitter:image" content="https://medicalstickers.shop/og.png">', f'<meta name="twitter:image" content="{img}">')
+            if 'og:image:width' not in s:
+                s = s.replace(f'<meta property="og:image" content="{img}">', f'<meta property="og:image" content="{img}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">', 1)
+            # 7. shipping + returns on every Offer
+            def addoffer(mm):
+                d = json.loads(mm.group(1))
+                if d.get('@type') == 'Product':
+                    offers = d['offers'] if isinstance(d['offers'], list) else [d['offers']]
+                    for of in offers: of.update(OFFER_EXTRA)
+                return '<script type="application/ld+json">' + json.dumps(d, ensure_ascii=False).replace('</', '<\\/') + '</script>'
+            s = re.sub(r'<script type="application/ld\+json">(.*?)</script>', addoffer, s, flags=re.S)
+        if f == 'collections/night-shift/index.html':
+            # 6. distinct from the Night Shift specialty page
+            s = s.replace('<title>Night Shift stickers · MedicalStickers.shop</title>', '<title>Night Shift collection · MedicalStickers.shop</title>')
+            s = s.replace('<meta property="og:title" content="Night Shift stickers · MedicalStickers.shop">', '<meta property="og:title" content="Night Shift collection · MedicalStickers.shop">')
+            s = s.replace('<meta name="twitter:title" content="Night Shift stickers · MedicalStickers.shop">', '<meta name="twitter:title" content="Night Shift collection · MedicalStickers.shop">')
+        if s != o: open(f, 'w').write(s)
+    print('oct21 fixes done')
+import sys
+if '--oct21-only' in sys.argv:
+    oct21_fixes(); sys.exit(0)
 for f in glob.glob('**/*.html', recursive=True):
     s = open(f).read(); o = s
     for a, b in R: s = a.sub(b, s) if hasattr(a, 'sub') else s.replace(a, b)
@@ -77,4 +162,5 @@ s = re.sub(r'(<meta name="description" content=")[^"]*', r'\1Thank you for your 
 s = s.replace('/cart/"', '/thanks/"')
 if '<meta name="robots"' not in s: s = s.replace('</head>', '<meta name="robots" content="noindex"></head>', 1)
 import os; os.makedirs('thanks', exist_ok=True); open('thanks/index.html', 'w').write(s)
+oct21_fixes()  # last, so the thanks page built above gets the same changes
 print('fixups done')
