@@ -136,6 +136,32 @@ def oct21_fixes():
         if s != o: open(f, 'w').write(s)
     print('oct21 fixes done')
 import sys
+# ---- 2026-10-22 (launch audit): home page twitter card; specialty pages with no stickers yet are noindex and left out
+# ---- of the sitemap (they come back automatically once they list stickers). Idempotent; runs last (also: --oct22-only).
+EMPTY_SPECIALTY = 'No stickers for this one yet.'
+def oct22_fixes():
+    f = 'index.html'; s = o = open(f).read()
+    if 'name="twitter:card"' not in s:
+        m = re.search(r'<meta property="og:image" content="([^"]+)" />', s); assert m, 'home og:image'
+        t = re.search(r'<meta property="og:title" content="([^"]*)" />', s).group(1)
+        d = re.search(r'<meta property="og:description" content="([^"]*)" />', s).group(1)
+        s = s.replace(m.group(0), m.group(0) + f'\n<meta name="twitter:card" content="summary_large_image" />\n<meta name="twitter:title" content="{t}" />'
+                      f'\n<meta name="twitter:description" content="{d}" />\n<meta name="twitter:image" content="{m.group(1)}" />', 1)
+    if s != o: open(f, 'w').write(s)
+    empty = []
+    for f in sorted(glob.glob('specialties/*/index.html')):
+        s = o = open(f).read(); slug = f.split('/')[1]
+        if EMPTY_SPECIALTY in s:
+            empty.append(slug)
+            if '<meta name="robots"' not in s: s = s.replace('<meta name="theme-color"', '<meta name="robots" content="noindex"><meta name="theme-color"', 1)
+        if s != o: open(f, 'w').write(s)
+    sm = o = open('sitemap-0.xml').read()
+    for slug in empty:
+        sm = re.sub(r'<url><loc>https://medicalstickers\.shop/specialties/' + re.escape(slug) + r'/</loc>.*?</url>', '', sm, flags=re.S)
+    if sm != o: open('sitemap-0.xml', 'w').write(sm)
+    print('oct22 fixes done; noindex + out of sitemap:', ', '.join(empty))
+if '--oct22-only' in sys.argv:
+    oct22_fixes(); sys.exit(0)
 if '--oct21-only' in sys.argv:
     oct21_fixes(); sys.exit(0)
 # ---- Bigger ideas (2026-10-21, preview first): bottle mockup on product pages, one-line "who it's for" descriptions,
@@ -246,4 +272,5 @@ if '<meta name="robots"' not in s: s = s.replace('</head>', '<meta name="robots"
 import os; os.makedirs('thanks', exist_ok=True); open('thanks/index.html', 'w').write(s)
 oct21_fixes()  # last, so the thanks page built above gets the same changes
 bigger_ideas()
+oct22_fixes()
 print('fixups done')
