@@ -180,11 +180,9 @@ def bigger_ideas():
     E2 = lambda t: html.escape(t, quote=True)
     desc = json.load(open('tools/descriptions.json'))
     cat = json.load(open('tools/catalog.json')); by_slug = {p['slug']: p for p in cat}
-    # free-shipping nudge from the real numbers: functions/lib/stripe.ts threshold (free at >= threshold) and the cheapest variant
+    # free-shipping nudge from the real threshold in functions/lib/stripe.ts (free at >= threshold)
     m = re.search(r'FREE_SHIPPING_MIN_CENTS\s*=\s*(\d+)', open('functions/lib/stripe.ts').read()); free_min = int(m.group(1))
-    cheapest = min(round(v['price'] * 100) for p in cat for v in p['variants'])
-    n_min = math.ceil(free_min / cheapest)
-    nudge = f'Free U.S. shipping on orders over ${free_min // 100}. Grab {n_min} or more.'
+    nudge = f'Free U.S. shipping on orders over ${free_min // 100}.'
     shop = open('shop/index.html').read(); spec, coll, mob_spec = _nav_lists(shop)
     for f in glob.glob('products/*/index.html'):
         slug = f.split('/')[1]; prod = by_slug[slug]; line = desc[slug]; s = o = open(f).read()
