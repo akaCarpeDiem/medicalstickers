@@ -121,3 +121,6 @@
 /products/chart-now-cry-later/ /shop/ 301
 /products/chart-now-cry-later /shop/ 301
 # end retired
+# order lookup moved to the same path as Nature Stickers
+/order-lookup /order/ 301
+/order-lookup/ /order/ 301

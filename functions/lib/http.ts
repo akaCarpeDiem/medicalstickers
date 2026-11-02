@@ -7,18 +7,12 @@ export type Env = {
   SHIPPING_COUNTRIES?: string;
   PUBLIC_ORIGIN?: string;
   /**
-   * Transactional email for order lookup. Either this or the EMAIL binding is required
-   * before a receipt can be resent. The from-address domain must be verified with Resend.
+   * Optional Workers KV for order-lookup rate limits. When unbound, the lookup
+   * uses an in-isolate memory store (same pattern as Nature Stickers).
    */
-  RESEND_API_KEY?: string;
-  /** Defaults to Medical Stickers <support@medicalstickers.shop> */
-  ORDER_FROM_EMAIL?: string;
-  /**
-   * Optional Cloudflare Email Workers binding (Pages → Settings → Bindings).
-   * Used when RESEND_API_KEY is not set. `from` must be an address on medicalstickers.shop.
-   */
-  EMAIL?: {
-    send(message: unknown): Promise<void>;
+  CATALOG_KV?: {
+    get(key: string): Promise<string | null>;
+    put(key: string, value: string, options?: { expirationTtl?: number }): Promise<void>;
   };
 };
 
