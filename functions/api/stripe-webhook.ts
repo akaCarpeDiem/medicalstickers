@@ -1,4 +1,5 @@
 import { json, methodNotAllowed, type Env } from "../lib/http";
+import { PACKING_SLIP_TAIL } from "../lib/order-lookup";
 import { externalIdFromSession, printful } from "../lib/printful";
 import { verifyStripeSignature } from "../lib/stripe";
 
@@ -72,7 +73,9 @@ async function createPrintfulOrder(env: Env, session: any): Promise<void> {
       email: "support@medicalstickers.shop",
       message: "Thank you for supporting Medical Stickers. Stay hydrated out there.",
       store_name: "Medical Stickers",
-      custom_order_id: String(session.id).slice(0, 64),
+      // Printful returns 400 for the whole order when custom_order_id is over 20 characters.
+      // The packing slip shows this tail of the Checkout Session id; order lookup matches it.
+      custom_order_id: String(session.id).slice(-PACKING_SLIP_TAIL),
     },
   };
 
