@@ -36,12 +36,16 @@ export async function stripeForm(
   return { ok: res.ok, status: res.status, data };
 }
 
-export async function stripeGet(env: Env, path: string): Promise<{ ok: boolean; status: number; data: any }> {
+export async function stripeGet(
+  env: Env,
+  path: string,
+  extraHeaders?: Record<string, string>,
+): Promise<{ ok: boolean; status: number; data: any }> {
   if (!env.STRIPE_SECRET_KEY) {
     return { ok: false, status: 503, data: { error: { message: "STRIPE_SECRET_KEY not configured" } } };
   }
   const res = await fetch(`https://api.stripe.com${path}`, {
-    headers: { authorization: `Bearer ${env.STRIPE_SECRET_KEY}` },
+    headers: { authorization: `Bearer ${env.STRIPE_SECRET_KEY}`, ...extraHeaders },
   });
   const data = await res.json();
   return { ok: res.ok, status: res.status, data };
