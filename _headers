@@ -13,3 +13,9 @@
   Cache-Control: public, max-age=604800
 /og/*
   Cache-Control: public, max-age=604800
+# pages.dev copies (the production alias and preview deploys) stay out of search;
+# medicalstickers.shop itself is not matched here and stays indexable.
+https://medicalstickers.pages.dev/*
+  X-Robots-Tag: noindex
+https://:alias.medicalstickers.pages.dev/*
+  X-Robots-Tag: noindex
